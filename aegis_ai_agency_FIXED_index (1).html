@@ -950,208 +950,6 @@ body, main, section, .hero, .hero-inner, .hero-content, .container, .wrap, .wrap
   pointer-events: none !important;
 }
 
-.trust-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-top: 48px;
-}
-
-.trust-card {
-  background: rgba(10, 15, 30, 0.72);
-  border: 1px solid rgba(59, 130, 246, 0.22);
-  border-radius: 24px;
-  padding: 28px;
-  backdrop-filter: blur(16px);
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.trust-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(6, 182, 212, 0.75);
-  box-shadow: 0 0 40px rgba(59, 130, 246, 0.18);
-}
-
-.trust-icon {
-  font-size: 32px;
-  margin-bottom: 18px;
-}
-
-.trust-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 12px;
-  color: #ffffff;
-}
-
-.trust-card p {
-  color: rgba(226, 232, 240, 0.75);
-  line-height: 1.6;
-}
-
-@media (max-width: 900px) {
-  .trust-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .trust-grid {
-    grid-template-columns: 1fr;
-  }
-}
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-}
-
-@media (max-width: 1000px) {
-  .pricing-grid {
-    grid-template-columns: 1fr;
-  }
-}
-.founder-wrap {
-  display: grid;
-  grid-template-columns: 1.4fr 0.8fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.founder-content {
-  background: rgba(10, 15, 30, 0.55);
-  border: 1px solid rgba(59, 130, 246, 0.18);
-  border-radius: 28px;
-  padding: 42px;
-}
-
-.founder-content h2 {
-  font-size: clamp(2rem, 5vw, 4rem);
-  line-height: 1.05;
-  margin-bottom: 24px;
-}
-
-.founder-content p {
-  color: rgba(226, 232, 240, 0.78);
-  line-height: 1.75;
-  margin-bottom: 18px;
-}
-
-.founder-card {
-  background: linear-gradient(180deg, rgba(59, 130, 246, 0.18), rgba(6, 8, 16, 0.82));
-  border: 1px solid rgba(6, 182, 212, 0.35);
-  border-radius: 32px;
-  padding: 36px;
-  text-align: center;
-  box-shadow: 0 0 50px rgba(59, 130, 246, 0.16);
-}
-
-.founder-avatar {
-  width: 110px;
-  height: 110px;
-  border-radius: 28px;
-  margin: 0 auto 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #6366F1, #06B6D4);
-  color: #fff;
-  font-weight: 900;
-  font-size: 2rem;
-  box-shadow: 0 0 45px rgba(6, 182, 212, 0.4);
-}
-
-.founder-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 8px;
-}
-
-.founder-card p {
-  color: rgba(226, 232, 240, 0.7);
-}
-
-.founder-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  margin-top: 24px;
-}
-
-.founder-tags span {
-  border: 1px solid rgba(6, 182, 212, 0.35);
-  color: #67e8f9;
-  padding: 8px 12px;
-  border-radius: 999px;
-  font-size: 0.8rem;
-}
-
-@media (max-width: 900px) {
-  .founder-wrap {
-    grid-template-columns: 1fr;
-  }
-}
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  margin-top: 48px;
-}
-
-.portfolio-card {
-  background: rgba(10, 15, 30, 0.68);
-  border: 1px solid rgba(59, 130, 246, 0.24);
-  border-radius: 28px;
-  padding: 24px;
-  transition: 0.3s ease;
-}
-
-.portfolio-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(6, 182, 212, 0.75);
-  box-shadow: 0 0 45px rgba(59, 130, 246, 0.18);
-}
-
-.portfolio-image {
-  height: 180px;
-  border-radius: 22px;
-  margin-bottom: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  font-weight: 900;
-  color: #fff;
-}
-
-.gradient-preview {
-  background: radial-gradient(circle at top left, rgba(99, 102, 241, 0.9), rgba(6, 182, 212, 0.45), rgba(6, 8, 16, 0.9));
-}
-
-.portfolio-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-}
-
-.portfolio-card p {
-  color: rgba(226, 232, 240, 0.72);
-  line-height: 1.65;
-}
-
-.portfolio-card span {
-  display: inline-block;
-  margin-top: 18px;
-  color: #67e8f9;
-  border: 1px solid rgba(6, 182, 212, 0.35);
-  border-radius: 999px;
-  padding: 8px 12px;
-  font-size: 0.8rem;
-}
-
-@media (max-width: 900px) {
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-  }
-}
 </style>
 </head>
 <body>
@@ -1229,8 +1027,7 @@ body, main, section, .hero, .hero-inner, .hero-content, .container, .wrap, .wrap
       </div>
       <div>
         <div class="stars">★★★★★</div>
-        <div class="proof-txt"><strong><div class="stat">
-
+        <div class="proof-txt"><strong>24+ UK businesses</strong> already scaled with Aegis AI</div>
       </div>
     </div>
     <div class="hero-btns">
@@ -1255,24 +1052,10 @@ body, main, section, .hero, .hero-inner, .hero-content, .container, .wrap, .wrap
 
 <!-- TRUST -->
 <div id="trust" class="rv">
- <div class="stat">
-  <h3>5 Days</h3>
-  <p>Website Delivery</p>
-</div>
-
-<div class="stat">
-  <h3>7 Days</h3>
-  <p>Automation Setup</p>
-</div>
-
-<div class="stat">
-  <h3>UK</h3>
-  <p>Based Support</p>
-</div>
-
-<div class="stat">
-  <h3>0</h3>
-  <p>Monthly Retainers Required</p>
+  <div class="ti"><span class="tn" data-target="24" data-suffix="+">0</span><span class="tl">Sites Delivered</span></div>
+  <div class="ti"><span class="tn" data-target="5"  data-suffix=" Days">0</span><span class="tl">Avg. Delivery</span></div>
+  <div class="ti"><span class="tn" data-target="100" data-suffix="%">0</span><span class="tl">Client Satisfaction</span></div>
+  <div class="ti"><span class="tn" data-target="3" data-suffix="x">0</span><span class="tl">Avg. Lead Increase</span></div>
 </div>
 
 <div class="gline"></div>
@@ -1321,36 +1104,7 @@ body, main, section, .hero, .hero-inner, .hero-content, .container, .wrap, .wrap
     </div>
   </div>
 </section>
-<section id="portfolio" class="section portfolio-section">
-  <div class="section-header">
-    <span class="eyebrow">DEMO PROJECTS</span>
-    <h2>Example Systems We Can Build For Your Business</h2>
-    <p>These demo projects show the type of websites, lead capture flows, and automation systems Aegis AI can create for service-based businesses.</p>
-  </div>
 
-  <div class="portfolio-grid">
-    <div class="portfolio-card">
-      <div class="portfolio-image gradient-preview">Roofing</div>
-      <h3>Roofing Lead Website</h3>
-      <p>A conversion-focused website for local roofing companies with quote forms, WhatsApp capture, and follow-up automation.</p>
-      <span>Website + Lead Capture</span>
-    </div>
-
-    <div class="portfolio-card">
-      <div class="portfolio-image gradient-preview">Clinic</div>
-      <h3>Private Clinic Website</h3>
-      <p>A premium booking website for clinics with service pages, Calendly integration, and patient enquiry capture.</p>
-      <span>Website + Booking System</span>
-    </div>
-
-    <div class="portfolio-card">
-      <div class="portfolio-image gradient-preview">Beauty</div>
-      <h3>Beauty Salon System</h3>
-      <p>A modern salon website with treatment pages, appointment booking, offer popups, and automated reminders.</p>
-      <span>Website + Automation</span>
-    </div>
-  </div>
-</section>
 <div class="gline"></div>
 
 <!-- DASHBOARD -->
@@ -1446,7 +1200,7 @@ body, main, section, .hero, .hero-inner, .hero-content, .container, .wrap, .wrap
       <div class="pc rv d1">
         <span class="pc-badge pb-pop">Most Popular</span>
         <div class="pc-name">Starter Presence</div>
-        <div class="pc-amt"><sup>£</sup>699</div>
+        <div class="pc-amt"><sup>£</sup>499</div>
         <p class="pc-note">One payment · Your site live in 5 business days</p>
         <ul class="pc-feats">
           <li><span class="fi">✓</span>Modern premium website</li>
@@ -1460,7 +1214,7 @@ body, main, section, .hero, .hero-inner, .hero-content, .container, .wrap, .wrap
       <div class="pc feat rv d2">
         <span class="pc-badge pb-best">Best Value</span>
         <div class="pc-name">Growth System</div>
-        <div class="pc-amt"><sup>£</sup>1,499</div>
+        <div class="pc-amt"><sup>£</sup>999</div>
         <p class="pc-note">Everything in Starter + full AI pipeline · 10 days</p>
         <ul class="pc-feats">
           <li><span class="fi">✓</span>Everything in Starter Presence</li>
@@ -1471,7 +1225,6 @@ body, main, section, .hero, .hero-inner, .hero-content, .container, .wrap, .wrap
         </ul>
         <a href="https://calendly.com/aegishealthai/30min?back=1&month=2026-06" target="_blank" rel="noopener" class="btn-price btn-fill">Build My System →</a>
       </div>
-      
     </div>
   </div>
 </section>
@@ -1479,36 +1232,26 @@ body, main, section, .hero, .hero-inner, .hero-content, .container, .wrap, .wrap
 <div class="gline"></div>
 
 <!-- TESTIMONIALS -->
-<section id="trust" class="section trust-section">
-  <div class="section-header">
-    <span class="eyebrow">WHY CHOOSE US</span>
-    <h2>Built For Small Businesses That Need Results Fast</h2>
-    <p>No fake hype. No bloated agency retainers. Just practical systems built to help you get more enquiries, save admin time, and look professional online.</p>
-  </div>
-
-  <div class="trust-grid">
-    <div class="trust-card">
-      <div class="trust-icon">🇬🇧</div>
-      <h3>UK-Based Support</h3>
-      <p>Built around the needs of UK businesses, local customers, and real service-based workflows.</p>
+<section id="testimonials">
+  <div class="wrap">
+    <div class="sec-hd c rv">
+      <span class="stag">Client Results</span>
+      <h2 class="sh">What Our Clients Say</h2>
+      <p class="ss">Real UK business owners. Real systems. Real results.</p>
     </div>
-
-    <div class="trust-card">
-      <div class="trust-icon">⚡</div>
-      <h3>Fast Delivery</h3>
-      <p>Websites can go live in days, not months, with clear milestones from start to finish.</p>
+    <div class="car-wrap rv">
+      <div class="car-track" id="cartrack">
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-txt">"Aegis AI built our entire lead system in under a week. We went from manually chasing enquiries to having everything automated. Our conversion rate doubled in the first month."</p><div class="tc-auth"><div class="tc-av">JB</div><div><div class="tc-name">James Blackwell</div><div class="tc-role">Owner · Blackwell Roofing, Manchester</div></div></div></div>
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-txt">"The website they built is genuinely the best investment we've made. It loads fast, looks incredible, and the booking system means we wake up to new appointments every single morning."</p><div class="tc-auth"><div class="tc-av">SK</div><div><div class="tc-name">Sarah Khan</div><div class="tc-role">Director · SK Aesthetics, London</div></div></div></div>
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-txt">"I was sceptical about AI automation but Aegis explained everything clearly. Now my follow-up emails send themselves and the CRM updates automatically. It's genuinely magic."</p><div class="tc-auth"><div class="tc-av">MR</div><div><div class="tc-name">Marcus Reid</div><div class="tc-role">Founder · Reid Financial, Birmingham</div></div></div></div>
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-txt">"Five-day delivery sounded too good to be true. It wasn't. The site was live in four days and the chatbot has already booked 11 discovery calls this week alone. Unreal ROI."</p><div class="tc-auth"><div class="tc-av">PW</div><div><div class="tc-name">Priya Wilson</div><div class="tc-role">CEO · Wilson Consulting, Leeds</div></div></div></div>
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-txt">"We tried two other agencies before Aegis. Neither understood what we actually needed. Aegis listened, built fast, and delivered something that genuinely changed how we operate."</p><div class="tc-auth"><div class="tc-av">TH</div><div><div class="tc-name">Tom Harris</div><div class="tc-role">MD · Harris Property Group, Bristol</div></div></div></div>
+      </div>
     </div>
-
-    <div class="trust-card">
-      <div class="trust-icon">🔒</div>
-      <h3>No Lock-In Contracts</h3>
-      <p>You own your website, assets, and systems outright after delivery.</p>
-    </div>
-
-    <div class="trust-card">
-      <div class="trust-icon">🤖</div>
-      <h3>AI-First Systems</h3>
-      <p>We combine websites, automation, lead capture, chatbots, and follow-up workflows in one practical system.</p>
+    <div class="car-ctrls">
+      <button class="car-btn" id="cprev">&#8592;</button>
+      <div class="car-dots" id="cdots"></div>
+      <button class="car-btn" id="cnext">&#8594;</button>
     </div>
   </div>
 </section>
@@ -1532,20 +1275,6 @@ body, main, section, .hero, .hero-inner, .hero-content, .container, .wrap, .wrap
           <div class="ab-pt"><span class="apt-ico">🔒</span><div><strong>No Lock-In Contracts</strong><span>Own your systems outright from day one</span></div></div>
           <div class="ab-pt"><span class="apt-ico">🇬🇧</span><div><strong>UK-Based, UK-Focused</strong><span>We understand the British market, its clients, and its pace</span></div></div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="founder" class="section founder-section">
-      <div class="founder-card">
-      <div class="founder-avatar">LS</div>
-      <h3>Laiba Sheikh</h3>
-      <p>Founder, Aegis AI</p>
-      <div class="founder-tags">
-        <span>AI</span>
-        <span>Healthcare</span>
-        <span>Data</span>
-        <span>Automation</span>
       </div>
     </div>
   </div>
@@ -1586,10 +1315,7 @@ body, main, section, .hero, .hero-inner, .hero-content, .container, .wrap, .wrap
         <button class="faq-q">What if I need changes after delivery?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
         <div class="faq-a"><div class="faq-a-in">We include two rounds of revisions within 14 days of delivery at no extra charge. After that, small changes are billed at £75/hour. Larger builds or ongoing support packages are also available on request.</div></div>
       </div>
-     
-</div>
     </div>
-
   </div>
 </section>
 
@@ -1605,14 +1331,7 @@ body, main, section, .hero, .hero-inner, .hero-content, .container, .wrap, .wrap
       <span class="book-ico">📅</span>
       <h3>Book Your Free Strategy Call</h3>
       <p>Pick a time that works — we'll scope your project and map out exactly what we'd build for you.</p>
-      <div class="cal-placeholder"><div class="calendly-box">
-  <div class="calendly-inline-widget"
-       data-url="https://calendly.com/aegishealthai/30min"
-       style="min-width:320px;height:700px;">
-  </div>
-</div>
-
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script></div>
+      <div class="cal-placeholder">📆 Calendly booking widget loads here.<br/>Replace this div with your Calendly inline embed script.</div>
       <a href="https://calendly.com/aegishealthai/30min?back=1&month=2026-06" target="_blank" rel="noopener" class="btn-p" style="display:inline-flex;margin:0 auto;">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         Schedule Now
