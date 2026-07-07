@@ -3,21 +3,16 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="Aegis AI Agency — UK-based AI agency building websites, automation, lead generation and AI chatbots for businesses ready to scale."/>
-<meta name="keywords" content="AI agency UK, AI automation, business websites, lead generation, AI chatbots, Aegis AI"/>
-<meta name="author" content="Aegis AI Agency"/>
+<meta name="description" content="Case study: Slay Beauty London, an e-commerce beauty & haircare store with an AI Beauty Concierge, built by Aegis AI Agency."/>
 <meta name="robots" content="index, follow"/>
-<meta property="og:title" content="Aegis AI Agency — We Build AI Systems That Work While You Sleep"/>
-<meta property="og:description" content="Premium websites, AI automation, lead generation and chatbots for UK businesses."/>
+<meta property="og:title" content="Slay Beauty London — Aegis AI Agency Case Study"/>
+<meta property="og:description" content="Case study: Slay Beauty London, an e-commerce beauty & haircare store with an AI Beauty Concierge, built by Aegis AI Agency."/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://aegisai.co.uk"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Aegis AI Agency"/>
 <meta name="theme-color" content="#04070F"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<title>Aegis AI Agency — AI Systems Built to Scale</title>
+<title>Slay Beauty London — Aegis AI Agency Case Study</title>
 <style>
 /* =============================================
    TOKENS
@@ -1246,6 +1241,59 @@ body, main, section, .hero, .hero-inner, .hero-content, .container, .wrap, .wrap
   .founder-card{padding:24px;}
   .trust-card{padding:20px;}
 }
+
+/* =============================================
+   CASE STUDY PAGES
+============================================= */
+.cs-hero{padding-top:9rem;}
+.cs-back{
+  display:flex;align-items:center;gap:.4rem;
+  color:var(--muted);font-size:.85rem;font-weight:600;
+  margin-bottom:1.5rem;transition:color .3s;
+}
+.cs-back:hover{color:var(--cyan);}
+.cs-meta-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;
+}
+.cs-meta-item{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:14px;padding:1.3rem;text-align:center;
+}
+.cs-meta-label{
+  display:block;font-size:.68rem;font-weight:700;letter-spacing:1px;
+  text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;
+}
+.cs-meta-value{display:block;font-size:1.02rem;font-weight:700;color:var(--text);}
+.cs-shot-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;
+}
+.cs-shot{
+  aspect-ratio:16/10;border-radius:16px;
+  background:rgba(59,130,246,.04);
+  border:1.5px dashed rgba(59,130,246,.3);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--muted);font-size:.85rem;font-weight:600;text-align:center;padding:1rem;
+  overflow:hidden;
+}
+.cs-shot img{width:100%;height:100%;object-fit:cover;border-radius:14px;}
+.cs-shot-fig{display:flex;flex-direction:column;gap:.6rem;margin:0;}
+.cs-shot-cap{font-size:.8rem;font-weight:600;color:var(--muted);text-align:center;}
+.cs-block p{color:var(--muted);font-size:.97rem;line-height:1.85;margin-top:1rem;}
+.bac p{color:var(--muted);font-size:.9rem;line-height:1.8;margin-top:.4rem;}
+.cs-cost-card{
+  background:var(--bg2);border:1px solid rgba(59,130,246,.25);
+  border-radius:22px;padding:3rem 2rem;
+}
+.cs-cost-amt{
+  font-size:3rem;font-weight:900;margin:1rem 0;
+  background:linear-gradient(135deg,#fff,var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+@media(max-width:700px){
+  .cs-meta-grid{grid-template-columns:1fr 1fr;}
+  .cs-shot-grid{grid-template-columns:1fr;}
+  .cs-hero{padding-top:7rem;}
+}
 </style>
 </head>
 <body>
@@ -1274,19 +1322,19 @@ body, main, section, .hero, .hero-inner, .hero-content, .container, .wrap, .wrap
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#" class="nav-logo">
+  <a href="index.html" class="nav-logo">
     <div class="nav-logo-mark">
       <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5l-9-4z"/></svg>
     </div>
     <span class="nav-logo-text">Aegis AI</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#portfolio">Portfolio</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+    <li><a href="index.html#portfolio">Portfolio</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
   </ul>
   <a href="https://calendly.com/aegishealthai/30min?back=1&month=2026-06" target="_blank" rel="noopener" class="nav-cta">Book a Call</a>
   <button class="hamburger" id="hbg" aria-label="Menu">
@@ -1295,205 +1343,102 @@ body, main, section, .hero, .hero-inner, .hero-content, .container, .wrap, .wrap
 </nav>
 
 <div class="mob-menu" id="mobmenu">
-  <a href="#services" onclick="closeMob()">Services</a>
-  <a href="#pricing"  onclick="closeMob()">Pricing</a>
-  <a href="#portfolio" onclick="closeMob()">Portfolio</a>
-  <a href="#about"    onclick="closeMob()">About</a>
-  <a href="#faq"      onclick="closeMob()">FAQ</a>
-  <a href="#contact"  onclick="closeMob()">Contact</a>
+  <a href="index.html#services" onclick="closeMob()">Services</a>
+  <a href="index.html#pricing"  onclick="closeMob()">Pricing</a>
+  <a href="index.html#portfolio" onclick="closeMob()">Portfolio</a>
+  <a href="index.html#about"    onclick="closeMob()">About</a>
+  <a href="index.html#faq"      onclick="closeMob()">FAQ</a>
+  <a href="index.html#contact"  onclick="closeMob()">Contact</a>
   <a href="https://calendly.com/aegishealthai/30min?back=1&month=2026-06" target="_blank" rel="noopener" onclick="closeMob()" class="btn-p" style="justify-content:center;margin-top:.4rem;">Book a Call</a>
 </div>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-inner">
-    <div class="hero-logo-wrap">
-      <div class="hero-logo-box">
-        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5l-9-4z"/></svg>
-      </div>
-    </div>
-    <div class="hero-badge"><span class="bdot"></span>UK-Based AI Agency · Systems That Scale</div>
-    <h1 class="hero-title">
-      <span class="gt">We Build AI Systems</span><br/>
-      <span class="gt2">That Work While You Sleep</span>
-    </h1>
-    <p class="hero-sub">Websites, automation, lead generation &amp; AI chatbots — engineered for UK businesses ready to grow without the bloated agency price tag.</p>
-    <div class="hero-proof">
-      <div class="av-stack">
-        <div class="av">JB</div><div class="av">SK</div>
-        <div class="av">MR</div><div class="av">PW</div>
-      </div>
-      <div>
-        <div class="stars">★★★★★</div>
-        <div class="proof-txt">Trusted by <strong>50+</strong> UK businesses</div>
-      </div>
-    </div>
-    <div class="hero-btns">
-      <a href="https://calendly.com/aegishealthai/30min?back=1&month=2026-06" target="_blank" rel="noopener" class="btn-p">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-        Book a Call
-      </a>
-      <a href="#portfolio" class="btn-g">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
-        View Portfolio
-      </a>
-    </div>
-    <div class="hero-grid">
-      <div class="hic"><img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=400&q=75" alt="AI Automation" loading="lazy"/><div class="hic-lbl">AI Automation</div></div>
-      <div class="hic"><img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&q=75" alt="AI Chatbots" loading="lazy"/><div class="hic-lbl">AI Chatbots</div></div>
-      <div class="hic"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=75" alt="Lead Gen" loading="lazy"/><div class="hic-lbl">Lead Generation</div></div>
-      <div class="hic"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=75" alt="Web Design" loading="lazy"/><div class="hic-lbl">Web Design</div></div>
-    </div>
-  </div>
-  <div class="scroll-hint"><span>Scroll</span><span class="arr">↓</span></div>
-</section>
 
-<!-- TRUST -->
-<div id="trust" class="rv">
- <div class="stat">
-  <h3>5 Days</h3>
-  <p>Website Delivery</p>
-</div>
-
-<div class="stat">
-  <h3>7 Days</h3>
-  <p>Automation Setup</p>
-</div>
-
-<div class="stat">
-  <h3>UK</h3>
-  <p>Based Support</p>
-</div>
-
-<div class="stat">
-  <h3>0</h3>
-  <p>Monthly Retainers Required</p>
-</div>
-</div>
-
-<div class="gline"></div>
-
-<!-- MARQUEE -->
-<div id="marquee-wrap">
-  <p class="mq-label">Trusted by businesses across the UK</p>
-  <div class="mq-track" id="mqtrack"></div>
-</div>
-
-<div class="gline"></div>
-
-<!-- SERVICES -->
-<section id="services">
-  <div class="wrap">
-    <div class="sec-hd c rv">
-      <span class="stag">What We Build</span>
-      <h2 class="sh">Four Services. One Agency.</h2>
-      <p class="ss">Every system is done-for-you, fully set up, and ready to generate results from day one.</p>
-    </div>
-    <div class="svc-grid">
-      <div class="sc rv d1">
-        <img class="sc-img" src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=75" alt="AI Automation" loading="lazy"/>
-        <div class="sc-ir"><div class="sc-icon">🤖</div><span class="sc-title">AI Automation</span></div>
-        <p class="sc-desc">Eliminate repetitive tasks with intelligent workflows. Connect your tools, automate your ops, reclaim hours every week.</p>
-        <span class="sc-chip">Zapier · Make · n8n</span>
-      </div>
-      <div class="sc rv d2">
-        <img class="sc-img" src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&q=75" alt="Websites" loading="lazy"/>
-        <div class="sc-ir"><div class="sc-icon">🌐</div><span class="sc-title">Business Websites</span></div>
-        <p class="sc-desc">Premium, fast-loading sites built to convert. Mobile-first, SEO-ready, delivered in 5 days — not 5 months.</p>
-        <span class="sc-chip">HTML · React · Webflow</span>
-      </div>
-      <div class="sc rv d3">
-        <img class="sc-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=75" alt="Lead Gen" loading="lazy"/>
-        <div class="sc-ir"><div class="sc-icon">🎯</div><span class="sc-title">Lead Generation Systems</span></div>
-        <p class="sc-desc">Automated pipelines that capture, qualify, and follow up with leads — 24/7 without you lifting a finger.</p>
-        <span class="sc-chip">CRM · Email · AI Sequences</span>
-      </div>
-      <div class="sc rv d4">
-        <img class="sc-img" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=75" alt="AI Chatbots" loading="lazy"/>
-        <div class="sc-ir"><div class="sc-icon">💬</div><span class="sc-title">AI Chatbots</span></div>
-        <p class="sc-desc">Custom-trained AI assistants that qualify visitors, book calls, and answer questions instantly — 24/7.</p>
-        <span class="sc-chip">GPT-4 · Voiceflow · Botpress</span>
-      </div>
+<!-- CASE STUDY HERO -->
+<section class="cs-hero">
+  <div class="wrap-sm">
+    <a href="index.html#portfolio" class="cs-back">&larr; Back to Portfolio</a>
+    <span class="stag rv">Case Study</span>
+    <h1 class="sh rv" style="font-size:clamp(2rem,5vw,3.2rem);">Slay Beauty London</h1>
+    <p class="ss rv" style="max-width:640px;">Premium e-commerce store for haircare, skincare and body essentials — with an AI "Beauty Concierge" that recommends the right product in seconds.</p>
+    <div class="pf-tags rv" style="margin-top:1.2rem;">
+      <span class="pf-tag">E-commerce</span>
+      <span class="pf-tag">AI Assistant</span>
+      <span class="pf-tag">Beauty</span>
     </div>
   </div>
 </section>
 
 <div class="gline"></div>
 
-<!-- DASHBOARD -->
-<section id="dashboard">
+<!-- QUICK FACTS -->
+<section>
   <div class="wrap">
-    <div class="sec-hd c rv">
-      <span class="stag">Live Systems</span>
-      <h2 class="sh">Your AI Dashboard, Always On</h2>
-      <p class="ss">Every client gets a real-time dashboard to track leads, automations, and revenue impact.</p>
-    </div>
-    <div class="dash-outer rv">
-      <div class="dash-bar">
-        <div class="dbar-dots">
-          <div class="dbd dbd-r"></div>
-          <div class="dbd dbd-y"></div>
-          <div class="dbd dbd-g"></div>
-        </div>
-        <div class="dbar-url">app.aegisai.co.uk/dashboard</div>
-      </div>
-      <div class="dash-body">
-        <div class="dash-sidebar">
-          <div class="ds-logo">
-            <div class="ds-logo-icon">🛡</div>
-            <span>Aegis AI</span>
-          </div>
-          <div class="ds-nav on">📊 Dashboard</div>
-          <div class="ds-nav">🎯 Leads</div>
-          <div class="ds-nav">🤖 Automations</div>
-          <div class="ds-nav">💬 Chatbot</div>
-          <div class="ds-nav">📈 Analytics</div>
-          <div class="ds-nav">⚙️ Settings</div>
-        </div>
-        <div class="dash-main">
-          <div class="ds-stats">
-            <div class="ds-stat"><div class="ds-stat-l">Leads This Month</div><div class="ds-stat-v">142</div><div class="ds-stat-c">↑ 38% vs last month</div></div>
-            <div class="ds-stat"><div class="ds-stat-l">Automations Run</div><div class="ds-stat-v">2.4k</div><div class="ds-stat-c">↑ 12% vs last month</div></div>
-            <div class="ds-stat"><div class="ds-stat-l">Hours Saved</div><div class="ds-stat-v">86h</div><div class="ds-stat-c">↑ 21% vs last month</div></div>
-          </div>
-          <div class="ds-chart">
-            <div class="ds-chart-lbl">Lead Pipeline — Last 30 Days</div>
-            <canvas id="dchart"></canvas>
-          </div>
-        </div>
-      </div>
+    <div class="cs-meta-grid rv">
+      <div class="cs-meta-item"><span class="cs-meta-label">Client</span><span class="cs-meta-value">Slay Beauty London</span></div>
+      <div class="cs-meta-item"><span class="cs-meta-label">Industry</span><span class="cs-meta-value">Beauty &amp; E-commerce</span></div>
+      <div class="cs-meta-item"><span class="cs-meta-label">Timeline</span><span class="cs-meta-value">7 Days</span></div>
+      <div class="cs-meta-item"><span class="cs-meta-label">Investment</span><span class="cs-meta-value">[Add approx. cost]</span></div>
     </div>
   </div>
 </section>
 
 <div class="gline"></div>
 
-<!-- BEFORE / AFTER -->
-<section id="ba">
+<!-- SCREENSHOTS -->
+<section id="cs-gallery">
   <div class="wrap">
-    <div class="sec-hd c rv">
-      <span class="stag">The Transformation</span>
-      <h2 class="sh">Before Aegis AI. After Aegis AI.</h2>
-      <p class="ss">Here's exactly what changes for your business once our systems are live.</p>
+    <div class="sec-hd rv">
+      <span class="stag">Screenshots</span>
+      <h2 class="sh">The Design</h2>
+      <p class="ss">Replace these placeholders with real screenshots of the finished website.</p>
     </div>
-    <div class="ba-grid">
+    <div class="cs-shot-grid">
+      <figure class="cs-shot-fig rv d1">
+        <div class="cs-shot"><img src="assets/screenshots/beauty-store/hero-brand.webp" alt="Slay Beauty London homepage hero — brand story and trust stats"/></div>
+        <figcaption class="cs-shot-cap">Homepage &amp; brand story</figcaption>
+      </figure>
+      <figure class="cs-shot-fig rv d2">
+        <div class="cs-shot"><img src="assets/screenshots/beauty-store/hero-summer-sale.webp" alt="Slay Beauty London seasonal campaign page — Summer Beauty Sale"/></div>
+        <figcaption class="cs-shot-cap">Seasonal campaign page</figcaption>
+      </figure>
+      <figure class="cs-shot-fig rv d3">
+        <div class="cs-shot"><img src="assets/screenshots/beauty-store/product-grid.webp" alt="Slay Beauty London product catalogue grid"/></div>
+        <figcaption class="cs-shot-cap">Product catalogue</figcaption>
+      </figure>
+      <figure class="cs-shot-fig rv d4">
+        <div class="cs-shot"><img src="assets/screenshots/beauty-store/beauty-concierge-chat.webp" alt="Beauty Concierge AI assistant recommending products"/></div>
+        <figcaption class="cs-shot-cap">Beauty Concierge — AI assistant</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<div class="gline"></div>
+
+<!-- CLIENT REQUIREMENTS -->
+<section>
+  <div class="wrap-sm">
+    <div class="cs-block rv">
+      <span class="stag">The Brief</span>
+      <h2 class="sh">Client Requirements</h2>
+      <p>Slay Beauty London needed a premium storefront to sell curated haircare, skincare and body essentials from 50+ trusted brands — with clear delivery promises, seasonal campaign pages, and a way to help customers navigate 500+ products without feeling overwhelmed. The standout ask was an AI "Beauty Concierge" that could recommend the right product based on a customer's hair type, skin concern or budget, right on the site.</p>
+    </div>
+  </div>
+</section>
+
+<div class="gline"></div>
+
+<!-- CHALLENGE / SOLUTION -->
+<section>
+  <div class="wrap-sm">
+    <div class="ba-grid" style="grid-template-columns:1fr 1fr;gap:2rem;">
       <div class="bac rv d1">
-        <div class="bac-hd"><span class="bac-badge before">Before</span><h3>Running on Manual</h3></div>
-        <div class="bac-items">
-          <div class="bac-item"><span class="bac-item-ico">😩</span><div class="bac-item-txt"><strong>Chasing leads manually</strong>Replying to enquiries by hand, losing hot prospects overnight</div></div>
-          <div class="bac-item"><span class="bac-item-ico">🐌</span><div class="bac-item-txt"><strong>Slow, outdated website</strong>No booking system, no conversion path, not mobile optimised</div></div>
-          <div class="bac-item"><span class="bac-item-ico">⏰</span><div class="bac-item-txt"><strong>Hours wasted on admin</strong>Invoicing, follow-ups, scheduling all done by hand every week</div></div>
-          <div class="bac-item"><span class="bac-item-ico">📉</span><div class="bac-item-txt"><strong>No visibility on results</strong>No idea which channels drive revenue or how many leads you're losing</div></div>
-        </div>
+        <div class="bac-hd"><span class="bac-badge before">Challenge</span></div>
+        <p>With 500+ products across dozens of brands, customers were struggling to find the right product for their specific hair type, skin concern or budget — generic filters weren't enough to feel personal, and the brand risked losing sales to decision fatigue.</p>
       </div>
-      <div class="bac after rv d3">
-        <div class="bac-hd"><span class="bac-badge after">After</span><h3>Running on Aegis AI</h3></div>
-        <div class="bac-items">
-          <div class="bac-item"><span class="bac-item-ico">⚡</span><div class="bac-item-txt"><strong>Leads captured automatically</strong>AI chatbot + lead forms follow up instantly, 24/7, zero effort from you</div></div>
-          <div class="bac-item"><span class="bac-item-ico">🚀</span><div class="bac-item-txt"><strong>Premium site that converts</strong>Fast, mobile, with booking system — live in 5 days</div></div>
-          <div class="bac-item"><span class="bac-item-ico">🤖</span><div class="bac-item-txt"><strong>Admin runs on autopilot</strong>Workflows handle follow-ups, scheduling and CRM updates automatically</div></div>
-          <div class="bac-item"><span class="bac-item-ico">📊</span><div class="bac-item-txt"><strong>Full dashboard visibility</strong>See every lead, every automation, every result — in real time</div></div>
-        </div>
+      <div class="bac after rv d2">
+        <div class="bac-hd"><span class="bac-badge after">Solution</span></div>
+        <p>We designed and built the Beauty Concierge — a conversational AI assistant embedded directly on the site that recommends products in plain English based on hair type, skin concern or budget. It sits alongside a redesigned storefront with a trust-building hero, clear delivery messaging, seasonal campaign banners and a fast, mobile-first product grid.</p>
       </div>
     </div>
   </div>
@@ -1501,274 +1446,32 @@ body, main, section, .hero, .hero-inner, .hero-content, .container, .wrap, .wrap
 
 <div class="gline"></div>
 
-<!-- PRICING -->
-<section id="pricing">
-  <div class="wrap-sm">
-    <div class="sec-hd c rv">
-      <span class="stag">Pricing</span>
-      <h2 class="sh">Simple Offers. Serious Results.</h2>
-      <p class="ss">No retainers. No lock-in. No fluff. Just systems that work from day one.</p>
-    </div>
-    <div class="price-grid">
-      <div class="pc rv d1">
-        <span class="pc-badge pb-pop">Most Popular</span>
-        <div class="pc-name">Starter Presence</div>
-        <div class="pc-amt"><sup>£</sup>699</div>
-        <p class="pc-note">One payment · Your site live in 5 business days</p>
-        <ul class="pc-feats">
-          <li><span class="fi">✓</span>Modern premium website</li>
-          <li><span class="fi">✓</span>Mobile responsive design</li>
-          <li><span class="fi">✓</span>Booking form integration</li>
-          <li><span class="fi">✓</span>Contact page + Google Maps</li>
-          <li><span class="fi">✓</span>Delivered in 5 days</li>
-        </ul>
-        <a href="https://calendly.com/aegishealthai/30min?back=1&month=2026-06" target="_blank" rel="noopener" class="btn-price btn-out">Get Your Website →</a>
-      </div>
-      <div class="pc feat rv d2">
-        <span class="pc-badge pb-best">Best Value</span>
-        <div class="pc-name">Growth System</div>
-        <div class="pc-amt"><sup>£</sup>1,499</div>
-        <p class="pc-note">Everything in Starter + full AI pipeline · 10 days</p>
-        <ul class="pc-feats">
-          <li><span class="fi">✓</span>Everything in Starter Presence</li>
-          <li><span class="fi">✓</span>AI lead capture system</li>
-          <li><span class="fi">✓</span>Automated follow-up sequences</li>
-          <li><span class="fi">✓</span>CRM setup + pipeline</li>
-          <li><span class="fi">✓</span>Delivered in 10 days</li>
-        </ul>
-        <a href="https://calendly.com/aegishealthai/30min?back=1&month=2026-06" target="_blank" rel="noopener" class="btn-price btn-fill">Build My System →</a>
-      </div>
-      
+<!-- COST -->
+<section>
+  <div class="wrap-xs" style="text-align:center;">
+    <div class="cs-cost-card rv">
+      <span class="stag">Investment</span>
+      <div class="cs-cost-amt">£[XXX]</div>
+      <p class="ss" style="margin:0 auto;">[Add a short note on what was included at this price point.]</p>
     </div>
   </div>
 </section>
 
 <div class="gline"></div>
 
-<!-- PORTFOLIO -->
-<section id="portfolio">
-  <div class="wrap">
-    <div class="sec-hd c rv">
-      <span class="stag">Portfolio</span>
-      <h2 class="sh">Portfolio</h2>
-      <p class="ss">A selection of AI-powered websites, automation demos and business tools I've built.</p>
-    </div>
-    <div class="portfolio-grid">
-      <div class="portfolio-card rv d1">
-        <div class="portfolio-image">
-          <img src="assets/screenshots/hair-oil/homepage.webp" alt="H.Sheikh London Hair Elixir homepage" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top;"/>
-        </div>
-        <h3>H.Sheikh London</h3>
-        <p>Luxury hair elixir e-commerce site with product storytelling and Hera, a personal AI hair ritual assistant. Pre-launch.</p>
-        <div class="pf-tags">
-          <span class="pf-tag">Website</span>
-          <span class="pf-tag">AI Assistant</span>
-          <span class="pf-tag">Beauty</span>
-        </div>
-        <div class="pf-actions">
-          <a href="#" target="_blank" rel="noopener" class="pf-btn primary">View Demo</a>
-          <a href="case-study-hair-oil.html" class="pf-btn ghost">Case Study</a>
-        </div>
-      </div>
-      <div class="portfolio-card rv d2">
-        <div class="portfolio-image">
-          <img src="assets/screenshots/ghana-hotel/hero.webp" alt="Atlantic Pearl resort homepage hero" loading="lazy" style="width:100%;height:100%;object-fit:cover;"/>
-        </div>
-        <h3>Atlantic Pearl Resort</h3>
-        <p>Luxury Ghana beachfront hotel concept with booking flow, immersive visuals and a 24/7 AI guest concierge.</p>
-        <div class="pf-tags">
-          <span class="pf-tag">Website</span>
-          <span class="pf-tag">Hospitality</span>
-          <span class="pf-tag">Booking</span>
-        </div>
-        <div class="pf-actions">
-          <a href="#" target="_blank" rel="noopener" class="pf-btn primary">View Demo</a>
-          <a href="case-study-ghana-hotel.html" class="pf-btn ghost">Case Study</a>
-        </div>
-      </div>
-      <div class="portfolio-card rv d3">
-        <div class="portfolio-image">
-          <img src="assets/screenshots/jarvis-ai/dashboard.webp" alt="Jarvis AI dashboard" loading="lazy" style="width:100%;height:100%;object-fit:cover;"/>
-        </div>
-        <h3>Jarvis AI Assistant</h3>
-        <p>Personal AI operating system with a Mac-connected brain, voice control, live memory and task automation. Still evolving.</p>
-        <div class="pf-tags">
-          <span class="pf-tag">AI Assistant</span>
-          <span class="pf-tag">Automation</span>
-          <span class="pf-tag">Productivity</span>
-        </div>
-        <div class="pf-actions">
-          <a href="#" target="_blank" rel="noopener" class="pf-btn primary">View Demo</a>
-          <a href="case-study-jarvis-ai.html" class="pf-btn ghost">Case Study</a>
-        </div>
-      </div>
-      <div class="portfolio-card rv d4">
-        <div class="portfolio-image">
-          <img src="assets/screenshots/beauty-store/hero-brand.webp" alt="Slay Beauty London homepage" loading="lazy" style="width:100%;height:100%;object-fit:cover;"/>
-        </div>
-        <h3>Slay Beauty London</h3>
-        <p>E-commerce beauty &amp; haircare store with an AI "Beauty Concierge" that recommends products by hair type, skin concern or budget.</p>
-        <div class="pf-tags">
-          <span class="pf-tag">E-commerce</span>
-          <span class="pf-tag">AI Assistant</span>
-          <span class="pf-tag">Beauty</span>
-        </div>
-        <div class="pf-actions">
-          <a href="#" target="_blank" rel="noopener" class="pf-btn primary">View Demo</a>
-          <a href="case-study-beauty-store.html" class="pf-btn ghost">Case Study</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="gline"></div>
-
-<!-- WHY CHOOSE US -->
-<section id="why-us" class="section trust-section">
-  <div class="section-header">
-    <span class="eyebrow">WHY CHOOSE US</span>
-    <h2>Built For Small Businesses That Need Results Fast</h2>
-    <p>No fake hype. No bloated agency retainers. Just practical systems built to help you get more enquiries, save admin time, and look professional online.</p>
-  </div>
-
-  <div class="trust-grid">
-    <div class="trust-card">
-      <div class="trust-icon">🇬🇧</div>
-      <h3>UK-Based Support</h3>
-      <p>Built around the needs of UK businesses, local customers, and real service-based workflows.</p>
-    </div>
-
-    <div class="trust-card">
-      <div class="trust-icon">⚡</div>
-      <h3>Fast Delivery</h3>
-      <p>Websites can go live in days, not months, with clear milestones from start to finish.</p>
-    </div>
-
-    <div class="trust-card">
-      <div class="trust-icon">🔒</div>
-      <h3>No Lock-In Contracts</h3>
-      <p>You own your website, assets, and systems outright after delivery.</p>
-    </div>
-
-    <div class="trust-card">
-      <div class="trust-icon">🤖</div>
-      <h3>AI-First Systems</h3>
-      <p>We combine websites, automation, lead capture, chatbots, and follow-up workflows in one practical system.</p>
-    </div>
-  </div>
-</section>
-
-<div class="gline"></div>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="wrap">
-    <div class="ab-grid">
-      <div class="ab-img rv">
-        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=75" alt="AI Technology" loading="lazy"/>
-        <div class="ab-overlay"></div>
-      </div>
-      <div class="ab-txt rv d2">
-        <span class="stag">Why Aegis AI</span>
-        <h2>Built for Businesses That Can't Afford to Wait</h2>
-        <p>Aegis AI is a lean, UK-based agency that builds real systems fast. No 3-month timelines, no bloated retainers, no account managers who've never written a line of code. Just clean, powerful AI infrastructure delivered in days — so you can get back to running your business.</p>
-        <div class="ab-pts">
-          <div class="ab-pt"><span class="apt-ico">⚡</span><div><strong>Fast Delivery</strong><span>Live in days, not months — we move at startup speed</span></div></div>
-          <div class="ab-pt"><span class="apt-ico">🔒</span><div><strong>No Lock-In Contracts</strong><span>Own your systems outright from day one</span></div></div>
-          <div class="ab-pt"><span class="apt-ico">🇬🇧</span><div><strong>UK-Based, UK-Focused</strong><span>We understand the British market, its clients, and its pace</span></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="founder" class="section founder-section">
-      <div class="founder-card">
-      <div class="founder-avatar">LS</div>
-      <h3>Laiba Sheikh</h3>
-      <p>Founder, Aegis AI</p>
-      <div class="founder-tags">
-        <span>AI</span>
-        <span>Healthcare</span>
-        <span>Data</span>
-        <span>Automation</span>
-      </div>
-    </div>
-</section>
-
-<div class="gline"></div>
-
-<!-- FAQ -->
-<section id="faq">
-  <div class="wrap-sm">
-    <div class="sec-hd c rv">
-      <span class="stag">FAQ</span>
-      <h2 class="sh">Questions Answered</h2>
-      <p class="ss">Everything you need to know before getting started.</p>
-    </div>
-    <div class="faq-list rv">
-      <div class="faq-item">
-        <button class="faq-q">How long does it actually take to go live?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-        <div class="faq-a"><div class="faq-a-in">The Starter Presence (£499) is delivered in 5 business days from your brief. The Growth System (£999) takes up to 10 days to include the full AI pipeline, CRM, and automation setup. We've never missed a deadline.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Do I need to be technical to use what you build?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-        <div class="faq-a"><div class="faq-a-in">Not at all. We handle everything and hand over simple-to-use dashboards. We also provide a 30-minute walkthrough call on delivery so you know exactly how to use what we've built. If something breaks, we fix it.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">What happens after I pay?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-        <div class="faq-a"><div class="faq-a-in">You'll receive a brief form within the hour. We review it, jump on a 15-minute kickoff call if needed, and start building immediately. You'll receive daily progress updates and a preview link before final delivery.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Is there a monthly fee after delivery?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-        <div class="faq-a"><div class="faq-a-in">No agency fees from us. You'll only pay for the tools we set up (hosting, CRM subscription) which typically cost £20–£60/month directly to the providers. We don't take a cut. No lock-in, no retainer.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Can you integrate with my existing tools?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-        <div class="faq-a"><div class="faq-a-in">Yes. We integrate with most major tools including Google Workspace, Calendly, Stripe, GoHighLevel, HubSpot, Mailchimp, WhatsApp Business, and more. Just let us know what you're using on your discovery call.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">What if I need changes after delivery?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-        <div class="faq-a"><div class="faq-a-in">We include two rounds of revisions within 14 days of delivery at no extra charge. After that, small changes are billed at £75/hour. Larger builds or ongoing support packages are also available on request.</div></div>
-      </div>
-     
-</div>
-    </div>
-
-  </div>
-</section>
-
-<div class="gline"></div>
-
-<!-- CONTACT -->
-<section id="contact">
+<!-- CTA -->
+<section style="text-align:center;">
   <div class="wrap-xs">
-    <span class="stag rv">Get Started</span>
-    <h2 class="sh rv">Ready to Build?</h2>
-    <p class="ss rv" style="margin:0 auto .5rem;">Book a free 15-minute discovery call. No pitch, no pressure — just a clear plan for your business.</p>
-    <div class="booking-card rv">
-      <span class="book-ico">📅</span>
-      <h3>Book Your Free Strategy Call</h3>
-      <p>Pick a time that works — we'll scope your project and map out exactly what we'd build for you.</p>
-      <div class="cal-placeholder"><div class="calendly-box">
-  <div class="calendly-inline-widget"
-       data-url="https://calendly.com/aegishealthai/30min"
-       style="min-width:320px;height:700px;">
-  </div>
-</div>
-
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script></div>
-      <a href="https://calendly.com/aegishealthai/30min?back=1&month=2026-06" target="_blank" rel="noopener" class="btn-p" style="display:inline-flex;margin:0 auto;">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Schedule Now
-      </a>
-    </div>
-    <div class="contact-row rv">
-      <a href="mailto:Aegishealthai@outlook.com" class="cc">✉️ Aegishealthai@outlook.com</a>
-      <a href="https://wa.me/447388793424" target="_blank" rel="noopener" class="cc">💬 WhatsApp</a>
+    <h2 class="sh rv">Want a website like this?</h2>
+    <p class="ss rv" style="margin:0 auto 2rem;">Book a free discovery call and let's talk about your project.</p>
+    <div class="hero-btns rv" style="justify-content:center;">
+      <a href="https://calendly.com/aegishealthai/30min?back=1&month=2026-06" target="_blank" rel="noopener" class="btn-p">Book a Call</a>
+      <a href="index.html#portfolio" class="btn-g">Back to Portfolio</a>
     </div>
   </div>
 </section>
+
+<div class="gline"></div>
 
 <!-- FOOTER -->
 <footer>
@@ -1783,20 +1486,20 @@ body, main, section, .hero, .hero-inner, .hero-content, .container, .wrap, .wrap
     <div class="ft-col">
       <h4>Services</h4>
       <ul>
-        <li><a href="#services">AI Automation</a></li>
-        <li><a href="#services">Business Websites</a></li>
-        <li><a href="#services">Lead Generation</a></li>
-        <li><a href="#services">AI Chatbots</a></li>
+        <li><a href="index.html#services">AI Automation</a></li>
+        <li><a href="index.html#services">Business Websites</a></li>
+        <li><a href="index.html#services">Lead Generation</a></li>
+        <li><a href="index.html#services">AI Chatbots</a></li>
       </ul>
     </div>
     <div class="ft-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </div>
     <div class="ft-col">
@@ -2055,4 +1758,5 @@ body, main, section, .hero, .hero-inner, .hero-content, .container, .wrap, .wrap
 })();
 </script>
 </body>
+
 </html>

@@ -1,0 +1,42 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="heraGlow" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#FFD9EC"/>
+      <stop offset="100%" stop-color="#F472B6"/>
+    </radialGradient>
+    <linearGradient id="heraAntenna" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F9A8D4"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </linearGradient>
+  </defs>
+
+  <!-- antenna -->
+  <line x1="60" y1="10" x2="60" y2="24" stroke="#F9A8D4" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="60" cy="8" r="6" fill="#FBCFE8" stroke="#F472B6" stroke-width="2"/>
+
+  <!-- ears -->
+  <rect x="10" y="46" width="10" height="22" rx="5" fill="#F9A8D4"/>
+  <rect x="100" y="46" width="10" height="22" rx="5" fill="#F9A8D4"/>
+
+  <!-- head -->
+  <rect x="20" y="24" width="80" height="76" rx="30" fill="url(#heraGlow)" stroke="#FBCFE8" stroke-width="2"/>
+
+  <!-- face plate -->
+  <rect x="32" y="46" width="56" height="40" rx="18" fill="#FFF0F8"/>
+
+  <!-- eyes -->
+  <circle cx="50" cy="64" r="6" fill="#5B2140"/>
+  <circle cx="70" cy="64" r="6" fill="#5B2140"/>
+  <circle cx="52" cy="62" r="1.8" fill="#fff"/>
+  <circle cx="72" cy="62" r="1.8" fill="#fff"/>
+
+  <!-- blush -->
+  <ellipse cx="40" cy="74" rx="5" ry="3.2" fill="#F9A8D4" opacity=".8"/>
+  <ellipse cx="80" cy="74" rx="5" ry="3.2" fill="#F9A8D4" opacity=".8"/>
+
+  <!-- smile -->
+  <path d="M52 76 Q60 83 68 76" stroke="#5B2140" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- sparkle -->
+  <path d="M95 30 l2.4 5.6 5.6 2.4-5.6 2.4-2.4 5.6-2.4-5.6-5.6-2.4 5.6-2.4z" fill="#FBBF24"/>
+</svg>
