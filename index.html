@@ -44,6 +44,15 @@
 <!-- MOUSE GLOW -->
 <div id="mglow"></div>
 
+<!-- SCROLL PROGRESS -->
+<div id="scrollProgress"></div>
+
+<!-- STICKY CTA -->
+<div id="stickyCta">
+  <p>Ready to grow with AI? Let's talk.</p>
+  <a href="https://calendly.com/aegishealthai/30min?back=1&month=2026-06" target="_blank" rel="noopener" class="btn-p" onclick="trackEvent('cta_click',{cta:'sticky_bar'})">Book Free Consultation</a>
+</div>
+
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="nav-logo">
@@ -60,7 +69,7 @@
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="https://calendly.com/aegishealthai/30min?back=1&month=2026-06" target="_blank" rel="noopener" class="nav-cta">Book a Call</a>
+  <a href="https://calendly.com/aegishealthai/30min?back=1&month=2026-06" target="_blank" rel="noopener" class="nav-cta" onclick="trackEvent('cta_click',{cta:'nav'})">Book a Call</a>
   <button class="hamburger" id="hbg" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -73,7 +82,7 @@
   <a href="#about"    onclick="closeMob()">About</a>
   <a href="#faq"      onclick="closeMob()">FAQ</a>
   <a href="#contact"  onclick="closeMob()">Contact</a>
-  <a href="https://calendly.com/aegishealthai/30min?back=1&month=2026-06" target="_blank" rel="noopener" onclick="closeMob()" class="btn-p" style="justify-content:center;margin-top:.4rem;">Book a Call</a>
+  <a href="https://calendly.com/aegishealthai/30min?back=1&month=2026-06" target="_blank" rel="noopener" onclick="closeMob();trackEvent('cta_click',{cta:'mobile_menu'})" class="btn-p" style="justify-content:center;margin-top:.4rem;">Book a Call</a>
 </div>
 
 <!-- HERO -->
@@ -490,7 +499,7 @@
           <li><span class="fi">✓</span>Contact page + Google Maps</li>
           <li><span class="fi">✓</span>Delivered in 5 days</li>
         </ul>
-        <a href="https://calendly.com/aegishealthai/30min?back=1&month=2026-06" target="_blank" rel="noopener" class="btn-price btn-out">Get Your Website →</a>
+        <a href="https://calendly.com/aegishealthai/30min?back=1&month=2026-06" target="_blank" rel="noopener" class="btn-price btn-out" onclick="trackEvent('cta_click',{cta:'pricing_starter'})">Get Your Website →</a>
       </div>
       <div class="pc feat rv d2">
         <span class="pc-badge pb-best">Best Value</span>
@@ -504,7 +513,7 @@
           <li><span class="fi">✓</span>CRM setup + pipeline</li>
           <li><span class="fi">✓</span>Delivered in 10 days</li>
         </ul>
-        <a href="https://calendly.com/aegishealthai/30min?back=1&month=2026-06" target="_blank" rel="noopener" class="btn-price btn-fill">Build My System →</a>
+        <a href="https://calendly.com/aegishealthai/30min?back=1&month=2026-06" target="_blank" rel="noopener" class="btn-price btn-fill" onclick="trackEvent('cta_click',{cta:'pricing_growth'})">Build My System →</a>
       </div>
       <div class="pc rv d3">
         <span class="pc-badge pb-pop" style="background:rgba(139,92,246,.18);color:#C4B5FD;border-color:rgba(139,92,246,.32);">Enterprise</span>
@@ -518,7 +527,7 @@
           <li><span class="fi">✓</span>Dedicated scoping call</li>
           <li><span class="fi">✓</span>Timeline scoped to your project</li>
         </ul>
-        <a href="https://calendly.com/aegishealthai/30min?back=1&month=2026-06" target="_blank" rel="noopener" class="btn-price btn-out">Book a Scoping Call →</a>
+        <a href="https://calendly.com/aegishealthai/30min?back=1&month=2026-06" target="_blank" rel="noopener" class="btn-price btn-out" onclick="trackEvent('cta_click',{cta:'pricing_enterprise'})">Book a Scoping Call →</a>
       </div>
     </div>
   </div>
@@ -819,7 +828,7 @@
 
 
 <!-- WHATSAPP -->
-<a href="https://wa.me/447942944260" target="_blank" rel="noopener" id="wa" aria-label="WhatsApp">
+<a href="https://wa.me/447942944260" target="_blank" rel="noopener" id="wa" aria-label="WhatsApp" onclick="trackEvent('cta_click',{cta:'whatsapp_float'})">
   <span class="wa-tip">Chat on WhatsApp</span>
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.39a9.87 9.87 0 0 0 4.76 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.51 2 12.04 2zm5.78 14.15c-.24.68-1.37 1.3-1.92 1.38-.49.07-1.12.1-1.8-.11-.42-.13-.95-.31-1.64-.61-2.88-1.24-4.76-4.13-4.9-4.32-.14-.19-1.17-1.56-1.17-2.98s.74-2.12 1-2.41c.26-.29.58-.36.77-.36h.56c.18 0 .42-.07.66.5.24.58.83 2 .9 2.14.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.31.38-.43.5-.14.14-.29.29-.12.58.17.29.76 1.25 1.63 2.03 1.12 1 2.07 1.31 2.36 1.46.29.14.46.12.63-.07.19-.22.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.68.79 1.97.94.29.14.48.22.55.34.07.12.07.7-.17 1.38z"/>
@@ -867,5 +876,6 @@
 <script src="assets/site.js" defer></script>
 <script src="assets/modal.js" defer></script>
 <script src="assets/jarvis.js" defer></script>
+<script src="assets/conversion.js" defer></script>
 </body>
 </html>

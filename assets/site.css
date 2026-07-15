@@ -993,6 +993,36 @@ footer{
 #wa:hover .wa-tip{opacity:1;}
 
 /* =============================================
+   CONVERSION FEATURES
+============================================= */
+#scrollProgress{
+  position:fixed;top:0;left:0;height:3px;width:0%;
+  background:linear-gradient(90deg,var(--blue),var(--cyan),var(--violet));
+  z-index:1200;transition:width .1s linear;
+  box-shadow:0 0 8px rgba(6,182,212,.6);
+}
+#stickyCta{
+  position:fixed;left:0;right:0;z-index:950;
+  background:rgba(4,7,15,.96);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+  padding:.65rem 6%;
+  display:flex;align-items:center;justify-content:center;gap:1.2rem;flex-wrap:wrap;
+  transform:translateY(-120%);
+  transition:transform .35s var(--ease);
+}
+#stickyCta.show{transform:translateY(0);}
+#stickyCta p{font-size:.83rem;color:var(--text);margin:0;font-weight:600;}
+#stickyCta .btn-p{padding:.5rem 1.3rem;font-size:.83rem;box-shadow:0 0 18px rgba(59,130,246,.4);}
+@media(max-width:640px){
+  #stickyCta p{display:none;}
+}
+
+.audit-modal-icon{font-size:2.2rem;margin-bottom:1rem;}
+.audit-modal-list{display:flex;flex-direction:column;gap:.5rem;margin:1rem 0 1.6rem;}
+.audit-modal-list li{display:flex;align-items:flex-start;gap:.6rem;font-size:.88rem;color:var(--text);}
+.audit-modal-list li::before{content:'✓';color:var(--cyan);font-weight:800;flex-shrink:0;}
+
+/* =============================================
    JARVIS AI WIDGET
 ============================================= */
 #jarvisLauncher{
