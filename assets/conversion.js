@@ -55,7 +55,8 @@
         <li>Free, even if you never work with us</li>
       </ul>
       <div class="modal-cta">
-        <a href="${CALENDLY}" target="_blank" rel="noopener" class="btn-p" onclick="trackEvent('cta_click',{cta:'audit_modal'})">Get My Free Audit</a>
+        <a href="enquiry.html" class="btn-p" onclick="trackEvent('cta_click',{cta:'audit_modal_form'})">Get My Free Audit</a>
+        <a href="${CALENDLY}" target="_blank" rel="noopener" class="btn-g" onclick="trackEvent('cta_click',{cta:'audit_modal_call'})">Or Book a Call Directly</a>
       </div>
     `);
   }
