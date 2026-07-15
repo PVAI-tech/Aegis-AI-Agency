@@ -17,15 +17,15 @@
 
   // --- Sticky CTA bar -------------------------------------------------------
   const stickyCta = document.getElementById("stickyCta");
-  const trustEl = document.getElementById("trust");
+  const heroEl = document.getElementById("hero");
   const nav = document.getElementById("nav");
   function positionStickyCta() {
     if (!stickyCta || !nav) return;
     stickyCta.style.top = nav.offsetHeight + "px";
   }
   function updateStickyCta() {
-    if (!stickyCta || !trustEl) return;
-    const past = trustEl.getBoundingClientRect().bottom < 0;
+    if (!stickyCta || !heroEl) return;
+    const past = heroEl.getBoundingClientRect().bottom < 0;
     stickyCta.classList.toggle("show", past);
   }
 

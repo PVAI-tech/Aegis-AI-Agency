@@ -129,36 +129,6 @@
     document.querySelectorAll(".process-timeline:not(.show)").forEach(el => el.classList.add("show"));
   }, 2500);
 
-  // Counters.
-  const counters = document.querySelectorAll("[data-target]");
-  const animateCounter = el => {
-    const target = Number(el.dataset.target || 0);
-    const suffix = el.dataset.suffix || "";
-    let current = 0;
-    const step = Math.max(1, Math.ceil(target / 45));
-    const timer = setInterval(() => {
-      current += step;
-      if (current >= target) {
-        current = target;
-        clearInterval(timer);
-      }
-      el.textContent = current + suffix;
-    }, 28);
-  };
-  if ("IntersectionObserver" in window) {
-    const co = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          animateCounter(e.target);
-          co.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.4 });
-    counters.forEach(c => co.observe(c));
-  } else {
-    counters.forEach(animateCounter);
-  }
-
   // "Built With" marquee — real technologies Aegis actually builds with.
   const mq = document.getElementById("mqtrack");
   if (mq && !mq.children.length) {
@@ -174,41 +144,6 @@
       if (item) item.classList.toggle("open");
     });
   });
-
-  // Testimonial carousel.
-  const track = document.getElementById("cartrack");
-  const prev = document.getElementById("cprev");
-  const next = document.getElementById("cnext");
-  const dots = document.getElementById("cdots");
-  if (track && prev && next && dots) {
-    const cards = Array.from(track.children);
-    let idx = 0;
-    function visibleCount() {
-      if (window.innerWidth < 700) return 1;
-      if (window.innerWidth < 1000) return 2;
-      return 3;
-    }
-    function maxIdx() { return Math.max(0, cards.length - visibleCount()); }
-    function renderDots() {
-      dots.innerHTML = "";
-      for (let i = 0; i <= maxIdx(); i++) {
-        const d = document.createElement("button");
-        d.className = "car-dot" + (i === idx ? " on" : "");
-        d.addEventListener("click", () => { idx = i; update(); });
-        dots.appendChild(d);
-      }
-    }
-    function update() {
-      idx = Math.min(idx, maxIdx());
-      const cardW = cards[0] ? cards[0].getBoundingClientRect().width + 24 : 0;
-      track.style.transform = `translateX(${-idx * cardW}px)`;
-      Array.from(dots.children).forEach((d, i) => d.classList.toggle("on", i === idx));
-    }
-    prev.addEventListener("click", () => { idx = Math.max(0, idx - 1); update(); });
-    next.addEventListener("click", () => { idx = Math.min(maxIdx(), idx + 1); update(); });
-    window.addEventListener("resize", () => { renderDots(); update(); });
-    renderDots(); update();
-  }
 
   // Card hover glow coordinates.
   document.querySelectorAll(".sc, .portfolio-card").forEach(card => {
