@@ -826,6 +826,36 @@
   </svg>
 </a>
 
+<!-- JARVIS AI WIDGET -->
+<button id="jarvisLauncher" aria-label="Chat with Jarvis, AI Business Consultant" aria-haspopup="dialog" aria-expanded="false">
+  <div class="jarvis-launcher-ring"></div>
+  <div class="jarvis-launcher-ring r2"></div>
+  <div class="jarvis-launcher-orb"></div>
+</button>
+<div class="jarvis-panel" id="jarvisPanel" role="dialog" aria-modal="false" aria-label="Jarvis, AI Business Consultant">
+  <div class="jarvis-panel-header">
+    <div class="jarvis-mini-orb"></div>
+    <div>
+      <div class="jarvis-panel-name">Jarvis</div>
+      <div class="jarvis-panel-status"><span class="jarvis-status-dot"></span>AI Business Consultant</div>
+    </div>
+    <button id="jarvisClose" aria-label="Close chat">&times;</button>
+  </div>
+  <div class="jarvis-panel-body" id="jarvisBody">
+    <div class="jarvis-msg jarvis-msg-bot">Hi, I'm Jarvis 👋 I can answer quick questions about pricing, timelines and what we build. Try one below, or type your own.</div>
+  </div>
+  <div class="jarvis-prompts" id="jarvisPrompts">
+    <button type="button" class="jarvis-prompt">How much does a website cost?</button>
+    <button type="button" class="jarvis-prompt">What automation does my business need?</button>
+    <button type="button" class="jarvis-prompt">Can you build booking systems?</button>
+    <button type="button" class="jarvis-prompt">What industries do you work with?</button>
+  </div>
+  <form class="jarvis-input-row" id="jarvisForm">
+    <input type="text" id="jarvisInput" placeholder="Ask Jarvis anything…" autocomplete="off"/>
+    <button type="submit" aria-label="Send">➤</button>
+  </form>
+</div>
+
 <!-- SHARED MODAL -->
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
@@ -836,5 +866,6 @@
 
 <script src="assets/site.js" defer></script>
 <script src="assets/modal.js" defer></script>
+<script src="assets/jarvis.js" defer></script>
 </body>
 </html>
