@@ -107,7 +107,7 @@
   }
 
   // Reveal animation with safe fallback.
-  const revealEls = document.querySelectorAll(".rv");
+  const revealEls = document.querySelectorAll(".rv, .process-timeline");
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -121,6 +121,13 @@
   } else {
     revealEls.forEach(el => el.classList.add("show"));
   }
+  // Safety net: most .rv content stays visible even without "show" thanks to
+  // the !important overrides above, but a few effects (like the process
+  // timeline's drawn connecting line) have no visual fallback — force them
+  // in after a short delay in case the observer never fires.
+  setTimeout(() => {
+    document.querySelectorAll(".process-timeline:not(.show)").forEach(el => el.classList.add("show"));
+  }, 2500);
 
   // Counters.
   const counters = document.querySelectorAll("[data-target]");
