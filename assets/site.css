@@ -1256,6 +1256,36 @@ body, main, section, .hero, .hero-inner, .hero-content, .container, .wrap, .wrap
   line-height: 1.65;
 }
 
+.pf-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 16px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(59, 130, 246, 0.14);
+  position: relative;
+  z-index: 1;
+}
+.pf-meta-item{min-width:0;}
+.pf-meta-label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+.pf-meta-value {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .pf-tags {
   display: flex;
   flex-wrap: wrap;
