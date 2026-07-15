@@ -1,0 +1,16 @@
+{
+  "name": "Aegis AI Agency",
+  "short_name": "Aegis AI",
+  "description": "UK-based AI agency building websites, automation, lead generation and AI chatbots for businesses ready to scale.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#04070F",
+  "theme_color": "#04070F",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
