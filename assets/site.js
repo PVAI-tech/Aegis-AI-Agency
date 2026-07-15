@@ -3,6 +3,15 @@
 
   const CALENDLY = "https://calendly.com/aegishealthai/30min?back=1&month=2026-06";
 
+  // Conversion tracking helper. Safe no-op until a real GA4/GTM snippet is
+  // enabled (see M10) — pushes to dataLayer if present so events aren't lost
+  // once tracking goes live, and never throws if called from inline onclick
+  // handlers before dataLayer exists.
+  window.trackEvent = function (name, data) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(Object.assign({ event: name }, data || {}));
+  };
+
   // Force-hide loader after a short delay and again after full load.
   function hideLoader() {
     const loader = document.getElementById("loader");
@@ -143,10 +152,10 @@
     counters.forEach(animateCounter);
   }
 
-  // Marquee content.
+  // "Built With" marquee — real technologies Aegis actually builds with.
   const mq = document.getElementById("mqtrack");
   if (mq && !mq.children.length) {
-    const items = ["AI Automation", "Premium Websites", "Lead Generation", "AI Chatbots", "CRM Setup", "UK Business Growth", "Fast Delivery", "No Retainers"];
+    const items = ["OpenAI API", "Vercel", "HTML5", "CSS3", "JavaScript", "Python", "Whisper", "n8n"];
     const html = items.concat(items).map(x => `<div class="mq-item">✦ ${x}</div>`).join("");
     mq.innerHTML = html;
   }
