@@ -154,30 +154,4 @@
     });
   });
 
-  // Dashboard mini chart.
-  const dchart = document.getElementById("dchart");
-  if (dchart) {
-    const ctx = dchart.getContext("2d");
-    function drawChart() {
-      const w = dchart.width = dchart.offsetWidth;
-      const h = dchart.height = dchart.offsetHeight;
-      ctx.clearRect(0,0,w,h);
-      const pts = [20,45,38,70,55,90,82,120,110,145,130,155];
-      const max = Math.max(...pts);
-      ctx.beginPath();
-      pts.forEach((v,i) => {
-        const x = (i/(pts.length-1))*w;
-        const y = h - (v/max)*(h-25) - 5;
-        if (i === 0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
-      });
-      ctx.strokeStyle = "rgba(6,182,212,.95)";
-      ctx.lineWidth = 3;
-      ctx.shadowBlur = 18;
-      ctx.shadowColor = "rgba(59,130,246,.7)";
-      ctx.stroke();
-      ctx.shadowBlur = 0;
-    }
-    drawChart();
-    window.addEventListener("resize", drawChart);
-  }
 })();
