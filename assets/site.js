@@ -62,50 +62,6 @@
     });
   }
 
-  // Mouse glow.
-  const mglow = document.getElementById("mglow");
-  if (mglow) {
-    window.addEventListener("mousemove", e => {
-      mglow.style.left = e.clientX + "px";
-      mglow.style.top = e.clientY + "px";
-    });
-  }
-
-  // Canvas particle background.
-  const cnv = document.getElementById("cnv");
-  if (cnv) {
-    const ctx = cnv.getContext("2d");
-    let w, h, particles = [];
-    function resize() {
-      w = cnv.width = window.innerWidth;
-      h = cnv.height = window.innerHeight;
-      particles = Array.from({ length: Math.min(90, Math.floor(w / 18)) }, () => ({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        r: Math.random() * 1.8 + 0.4,
-        vx: (Math.random() - 0.5) * 0.25,
-        vy: (Math.random() - 0.5) * 0.25,
-        a: Math.random() * 0.55 + 0.15
-      }));
-    }
-    function draw() {
-      ctx.clearRect(0, 0, w, h);
-      particles.forEach(p => {
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < 0 || p.x > w) p.vx *= -1;
-        if (p.y < 0 || p.y > h) p.vy *= -1;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(59,130,246,${p.a})`;
-        ctx.fill();
-      });
-      requestAnimationFrame(draw);
-    }
-    resize();
-    draw();
-    window.addEventListener("resize", resize);
-  }
-
   // Reveal animation with safe fallback.
   const revealEls = document.querySelectorAll(".rv, .process-timeline");
   if ("IntersectionObserver" in window) {
