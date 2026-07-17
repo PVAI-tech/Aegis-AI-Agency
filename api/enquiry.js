@@ -46,6 +46,27 @@ function validate(body) {
   return errors;
 }
 
+// Every enquiry field is attacker-controlled (it's a public form) and gets
+// interpolated into HTML email bodies below — escape it the same way a
+// templating engine would so a submission can't inject markup/scripts into
+// an email a real person opens.
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, ch => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  }[ch]));
+}
+
+// Subject lines don't support HTML, but a newline in a user-controlled
+// field could otherwise be used to smuggle extra headers into the request
+// body Resend receives — strip control characters instead of escaping.
+function sanitizeForSubject(value) {
+  return String(value ?? "").replace(/[\r\n]+/g, " ").trim();
+}
+
 const INTERNAL_INBOX = "Aegishealthai@outlook.com";
 
 // Uses Resend's HTTP API directly via fetch rather than their SDK — this
@@ -73,7 +94,7 @@ function serviceList(enquiry) {
   const services = Array.isArray(enquiry.servicesInterested)
     ? enquiry.servicesInterested
     : [enquiry.servicesInterested].filter(Boolean);
-  return services.length ? services.join(", ") : "Not specified";
+  return services.length ? services.map(escapeHtml).join(", ") : "Not specified";
 }
 
 async function sendClientConfirmationEmail(enquiry) {
@@ -81,13 +102,13 @@ async function sendClientConfirmationEmail(enquiry) {
     to: enquiry.email,
     subject: "We've received your enquiry — Aegis AI",
     html: `
-      <p>Hi ${enquiry.fullName},</p>
-      <p>Thanks for reaching out to Aegis AI. We've received your enquiry for <strong>${enquiry.businessName}</strong> and a member of the team will be in touch within the hour to arrange your discovery call.</p>
+      <p>Hi ${escapeHtml(enquiry.fullName)},</p>
+      <p>Thanks for reaching out to Aegis AI. We've received your enquiry for <strong>${escapeHtml(enquiry.businessName)}</strong> and a member of the team will be in touch within the hour to arrange your discovery call.</p>
       <p>Here's a copy of what you submitted:</p>
       <ul>
         <li><strong>Services interested in:</strong> ${serviceList(enquiry)}</li>
-        <li><strong>Project description:</strong> ${enquiry.projectDescription}</li>
-        <li><strong>Budget:</strong> ${enquiry.budget}</li>
+        <li><strong>Project description:</strong> ${escapeHtml(enquiry.projectDescription)}</li>
+        <li><strong>Budget:</strong> ${escapeHtml(enquiry.budget)}</li>
       </ul>
       <p>Speak soon,<br/>Aegis AI Agency</p>
     `
@@ -97,23 +118,23 @@ async function sendClientConfirmationEmail(enquiry) {
 async function sendInternalNotificationEmail(enquiry) {
   await sendEmail({
     to: INTERNAL_INBOX,
-    subject: `New enquiry: ${enquiry.businessName} (${enquiry.urgency})`,
+    subject: `New enquiry: ${sanitizeForSubject(enquiry.businessName)} (${sanitizeForSubject(enquiry.urgency)})`,
     html: `
-      <p>New enquiry received at ${enquiry.submittedAt}</p>
+      <p>New enquiry received at ${escapeHtml(enquiry.submittedAt)}</p>
       <ul>
-        <li><strong>Name:</strong> ${enquiry.fullName}</li>
-        <li><strong>Business:</strong> ${enquiry.businessName}</li>
-        <li><strong>Email:</strong> ${enquiry.email}</li>
-        <li><strong>Phone:</strong> ${enquiry.phone}</li>
-        <li><strong>Website:</strong> ${enquiry.website || "—"}</li>
-        <li><strong>Industry:</strong> ${enquiry.industry}</li>
-        <li><strong>Business size:</strong> ${enquiry.businessSize}</li>
-        <li><strong>Budget:</strong> ${enquiry.budget}</li>
-        <li><strong>Preferred contact:</strong> ${enquiry.preferredContact}</li>
-        <li><strong>Preferred meeting time:</strong> ${enquiry.preferredMeetingTime || "—"}</li>
+        <li><strong>Name:</strong> ${escapeHtml(enquiry.fullName)}</li>
+        <li><strong>Business:</strong> ${escapeHtml(enquiry.businessName)}</li>
+        <li><strong>Email:</strong> ${escapeHtml(enquiry.email)}</li>
+        <li><strong>Phone:</strong> ${escapeHtml(enquiry.phone)}</li>
+        <li><strong>Website:</strong> ${escapeHtml(enquiry.website) || "—"}</li>
+        <li><strong>Industry:</strong> ${escapeHtml(enquiry.industry)}</li>
+        <li><strong>Business size:</strong> ${escapeHtml(enquiry.businessSize)}</li>
+        <li><strong>Budget:</strong> ${escapeHtml(enquiry.budget)}</li>
+        <li><strong>Preferred contact:</strong> ${escapeHtml(enquiry.preferredContact)}</li>
+        <li><strong>Preferred meeting time:</strong> ${escapeHtml(enquiry.preferredMeetingTime) || "—"}</li>
         <li><strong>Services interested in:</strong> ${serviceList(enquiry)}</li>
-        <li><strong>Urgency:</strong> ${enquiry.urgency}</li>
-        <li><strong>Project description:</strong> ${enquiry.projectDescription}</li>
+        <li><strong>Urgency:</strong> ${escapeHtml(enquiry.urgency)}</li>
+        <li><strong>Project description:</strong> ${escapeHtml(enquiry.projectDescription)}</li>
       </ul>
     `
   });
@@ -148,9 +169,33 @@ async function notifyChannels(enquiry) {
   return true;
 }
 
+// In-memory sliding-window limiter, keyed by client IP. This resets on
+// every cold start and isn't shared across concurrent function instances,
+// so it's "best effort" rather than a hard guarantee — good enough to stop
+// a casual script from hammering the endpoint on a small-business site
+// without adding an external dependency (Upstash/Vercel KV) this project
+// doesn't otherwise need. If real abuse shows up, that's the upgrade path.
+const RATE_LIMIT_MAX = 5;
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
+const submissionsByIp = new Map();
+
+function isRateLimited(ip) {
+  const now = Date.now();
+  const timestamps = (submissionsByIp.get(ip) || []).filter(t => now - t < RATE_LIMIT_WINDOW_MS);
+  timestamps.push(now);
+  submissionsByIp.set(ip, timestamps);
+  return timestamps.length > RATE_LIMIT_MAX;
+}
+
 module.exports = async function handler(req, res) {
   if (req.method !== "POST") {
     res.status(405).json({ ok: false, error: "Method not allowed" });
+    return;
+  }
+
+  const ip = String(req.headers["x-forwarded-for"] || req.socket?.remoteAddress || "unknown").split(",")[0].trim();
+  if (isRateLimited(ip)) {
+    res.status(429).json({ ok: false, error: "Too many enquiries from this address — please try again later." });
     return;
   }
 

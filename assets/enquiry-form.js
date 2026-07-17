@@ -71,16 +71,31 @@
     if (submitBtn) submitBtn.disabled = true;
 
     try {
-      await fetch("/api/enquiry", {
+      const res = await fetch("/api/enquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
       });
+      if (!res.ok) {
+        // A real rejection from the backend (e.g. rate-limited, validation
+        // failure) — don't redirect to the thank-you page for this, since
+        // the enquiry genuinely didn't go through.
+        const body = await res.json().catch(() => ({}));
+        if (status) {
+          status.textContent = res.status === 429
+            ? "Too many enquiries submitted recently — please try again in a few minutes, or WhatsApp us directly."
+            : "Something went wrong sending your enquiry. Please try again or WhatsApp us directly.";
+          status.className = "form-status show error";
+        }
+        if (submitBtn) submitBtn.disabled = false;
+        console.warn("Enquiry API rejected the request:", res.status, body);
+        return;
+      }
     } catch (err) {
       // Expected locally (no serverless runtime under the dev preview server).
       // Once deployed to Vercel this endpoint is live — see assets/enquiry-form.js
       // header comment. We still continue to the thank-you page either way so
-      // the enquiry isn't blocked by a transient network issue.
+      // the enquiry isn't blocked by a transient network issue during local dev.
       console.warn("Enquiry API request failed (expected during local preview):", err);
     }
 
