@@ -46,16 +46,91 @@ function validate(body) {
   return errors;
 }
 
-async function notifyChannels(enquiry) {
-  // TODO: Client confirmation email — send `enquiry` a "we've got your
-  // enquiry" email (e.g. via Resend/Postmark/SendGrid). Template should
-  // restate what they asked for and the "within 1 hour" response promise
-  // shown on thank-you.html.
-  // await sendClientConfirmationEmail(enquiry);
+const INTERNAL_INBOX = "Aegishealthai@outlook.com";
 
-  // TODO: Internal notification email — alert the team inbox with the
-  // full enquiry payload so someone can action it within the hour.
-  // await sendInternalNotificationEmail(enquiry);
+// Uses Resend's HTTP API directly via fetch rather than their SDK — this
+// project has no package.json/build step, so a plain fetch call avoids
+// adding a dependency Vercel would need to npm-install.
+async function sendEmail({ to, subject, html }) {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) throw new Error("RESEND_API_KEY is not set");
+  const from = process.env.RESEND_FROM || "Aegis AI <onboarding@resend.dev>";
+
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ from, to, subject, html })
+  });
+  if (!res.ok) {
+    throw new Error(`Resend request failed (${res.status}): ${await res.text()}`);
+  }
+}
+
+function serviceList(enquiry) {
+  const services = Array.isArray(enquiry.servicesInterested)
+    ? enquiry.servicesInterested
+    : [enquiry.servicesInterested].filter(Boolean);
+  return services.length ? services.join(", ") : "Not specified";
+}
+
+async function sendClientConfirmationEmail(enquiry) {
+  await sendEmail({
+    to: enquiry.email,
+    subject: "We've received your enquiry — Aegis AI",
+    html: `
+      <p>Hi ${enquiry.fullName},</p>
+      <p>Thanks for reaching out to Aegis AI. We've received your enquiry for <strong>${enquiry.businessName}</strong> and a member of the team will be in touch within the hour to arrange your discovery call.</p>
+      <p>Here's a copy of what you submitted:</p>
+      <ul>
+        <li><strong>Services interested in:</strong> ${serviceList(enquiry)}</li>
+        <li><strong>Project description:</strong> ${enquiry.projectDescription}</li>
+        <li><strong>Budget:</strong> ${enquiry.budget}</li>
+      </ul>
+      <p>Speak soon,<br/>Aegis AI Agency</p>
+    `
+  });
+}
+
+async function sendInternalNotificationEmail(enquiry) {
+  await sendEmail({
+    to: INTERNAL_INBOX,
+    subject: `New enquiry: ${enquiry.businessName} (${enquiry.urgency})`,
+    html: `
+      <p>New enquiry received at ${enquiry.submittedAt}</p>
+      <ul>
+        <li><strong>Name:</strong> ${enquiry.fullName}</li>
+        <li><strong>Business:</strong> ${enquiry.businessName}</li>
+        <li><strong>Email:</strong> ${enquiry.email}</li>
+        <li><strong>Phone:</strong> ${enquiry.phone}</li>
+        <li><strong>Website:</strong> ${enquiry.website || "—"}</li>
+        <li><strong>Industry:</strong> ${enquiry.industry}</li>
+        <li><strong>Business size:</strong> ${enquiry.businessSize}</li>
+        <li><strong>Budget:</strong> ${enquiry.budget}</li>
+        <li><strong>Preferred contact:</strong> ${enquiry.preferredContact}</li>
+        <li><strong>Preferred meeting time:</strong> ${enquiry.preferredMeetingTime || "—"}</li>
+        <li><strong>Services interested in:</strong> ${serviceList(enquiry)}</li>
+        <li><strong>Urgency:</strong> ${enquiry.urgency}</li>
+        <li><strong>Project description:</strong> ${enquiry.projectDescription}</li>
+      </ul>
+    `
+  });
+}
+
+async function notifyChannels(enquiry) {
+  // Each awaited independently so one failing (e.g. a bad recipient) doesn't
+  // stop the other from sending — the caller already treats every failure
+  // here as non-fatal to the enquiry submission itself.
+  await Promise.allSettled([
+    sendClientConfirmationEmail(enquiry),
+    sendInternalNotificationEmail(enquiry)
+  ]).then(results => {
+    results.forEach(r => {
+      if (r.status === "rejected") console.error("notifyChannels email failed:", r.reason);
+    });
+  });
 
   // TODO: CRM push — create/update a contact + deal in whichever CRM is
   // adopted (HubSpot/GoHighLevel/etc.), tagged with servicesInterested.
