@@ -36,7 +36,7 @@
     sessionStorage.setItem(AUDIT_KEY, "1");
     if (window.trackEvent) trackEvent("audit_modal_open", {});
     window.openModal(`
-      <div class="audit-modal-icon">🎯</div>
+      <div class="audit-modal-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/></svg></div>
       <h3 class="modal-title" id="modalTitle">Get a Free AI Business Audit</h3>
       <div class="modal-section"><p>Before you go — want a second pair of eyes on where AI and automation could actually save you time? We'll review your current site and workflow and tell you exactly what's worth building first, no obligation.</p></div>
       <ul class="audit-modal-list">

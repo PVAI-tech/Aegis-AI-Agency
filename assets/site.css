@@ -30,6 +30,27 @@
 }
 
 /* =============================================
+   ICONS
+   Every functional icon on the site is one of these inline SVGs (custom
+   line-icon set, not emoji) — this block sizes/colors them consistently
+   so each wrapper only needs to set width/height on the container.
+============================================= */
+.sc-icon svg, .trust-icon svg, .bac-item-ico svg, .apt-ico svg,
+.book-ico svg, .modal-icon svg, .audit-modal-icon svg,
+.cc svg, .jarvis-input-row button svg {
+  width:100%;height:100%;display:block;color:var(--blue);
+}
+.sc-icon svg{width:22px;height:22px;}
+.trust-icon svg{width:28px;height:28px;color:var(--blue);}
+.bac-item-ico svg{width:18px;height:18px;color:var(--blue);}
+.apt-ico svg{width:24px;height:24px;color:var(--blue);}
+.book-ico svg{width:100%;height:100%;color:var(--blue);}
+.modal-icon svg{width:32px;height:32px;color:var(--blue);}
+.audit-modal-icon svg{width:36px;height:36px;color:var(--blue);}
+.cc svg{width:16px;height:16px;color:var(--text);flex-shrink:0;}
+.jarvis-input-row button svg{width:16px;height:16px;color:#fff;}
+
+/* =============================================
    RESET
 ============================================= */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
@@ -603,7 +624,7 @@ section{position:relative;z-index:2;padding:6rem 6%;}
   transition:all .35s var(--ease);
 }
 .ab-pt:hover{border-color:var(--border2);transform:translateX(7px);box-shadow:0 0 28px rgba(91,95,233,.08);}
-.apt-ico{font-size:1.5rem;filter:drop-shadow(0 0 8px rgba(91,95,233,.5));flex-shrink:0;}
+.apt-ico{width:24px;height:24px;flex-shrink:0;}
 .apt-ico + div strong{display:block;font-weight:700;font-size:.92rem;}
 .apt-ico + div span  {font-size:.82rem;color:var(--muted);}
 
@@ -656,9 +677,7 @@ section{position:relative;z-index:2;padding:6rem 6%;}
   background:linear-gradient(90deg,transparent,var(--blue),var(--cyan),transparent);
 }
 .book-ico{
-  font-size:3rem;margin-bottom:1rem;display:block;
-  background:linear-gradient(135deg,var(--blue),var(--cyan));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  width:44px;height:44px;margin:0 auto 1rem;display:block;
 }
 .booking-card h3{font-size:1.4rem;font-weight:800;margin-bottom:.5rem;}
 .booking-card p{color:var(--muted);font-size:.9rem;margin-bottom:1.8rem;}
