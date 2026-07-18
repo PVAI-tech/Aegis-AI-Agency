@@ -16,7 +16,9 @@ assets/
   jarvis.js                    The Jarvis AI widget (canned responses today, one swap point for a real API)
   conversion.js                Sticky CTA, floating-button visibility, exit-intent/scroll-depth audit modal
   enquiry-form.js               Client-side validation + submission for enquiry.html
-  favicon.svg                  Logo mark (currently being replaced with the client's own design)
+  favicon.png                  Favicon (cropped from the client's logo)
+  logo-icon.png                 Shield icon (client's logo, background removed) — used in nav/footer/loader/hero
+  logo-full-lockup.png          Full shield+wordmark lockup — reference/print only, black text unreadable on dark UI
   screenshots/                 Real product screenshots used in the 4 case studies
 vercel.json                    Security headers (CSP, HSTS, etc.) — see Security.md
 manifest.json, robots.txt, sitemap.xml   Standard PWA/SEO scaffolding
