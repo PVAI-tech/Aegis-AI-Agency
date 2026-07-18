@@ -1,6 +1,6 @@
 # Pricing Page Testing
 
-Actual verification results for `pricing-mockup.html` and the enquiry-flow changes, run against the local preview server. Screenshots are unreliable at non-zero scroll in this environment (a known tool artifact documented elsewhere in this project's history) — verification below relies on direct DOM/computed-style inspection, which is more reliable, plus screenshots where they did render correctly.
+Actual verification results for `pricing.html` and the enquiry-flow changes, run against the local preview server. Screenshots are unreliable at non-zero scroll in this environment (a known tool artifact documented elsewhere in this project's history) — verification below relies on direct DOM/computed-style inspection, which is more reliable, plus screenshots where they did render correctly.
 
 ## All four cards
 Verified via DOM query: all 4 cards render with correct `data-plan` ids, names, setup fees, and monthly fees exactly matching `pricing-data.js` (£299/£59, £599/£119, £1,199/£249, Enterprise/Custom). Only Professional carries the "Recommended" badge (`role="note" aria-label="Recommended plan"` — confirmed present, not just visually implied).

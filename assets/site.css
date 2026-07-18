@@ -532,10 +532,8 @@ section{position:relative;z-index:2;padding:6rem 6%;}
   border-color:rgba(91,95,233,.5);
   box-shadow:0 0 0 1px rgba(91,95,233,.22),0 0 80px rgba(91,95,233,.12),
              inset 0 0 60px rgba(91,95,233,.04);
-  animation:pfloat 4.5s ease-in-out infinite;
 }
 .pc.feat::before{opacity:1;}
-@keyframes pfloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
 .pc.feat:hover{animation:none;transform:translateY(-10px);}
 .pc-badge{
   display:inline-block;padding:.28rem .85rem;border-radius:var(--pill);

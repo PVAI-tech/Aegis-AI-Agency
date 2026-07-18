@@ -1,6 +1,6 @@
 # Pricing Policy — Productised AI
 
-The commercial rules behind the Productised AI pricing shown on `pricing-mockup.html`. Read alongside [`PricingStrategy.md`](PricingStrategy.md) (the original numbers/reasoning) and [`PaymentSystem.md`](PaymentSystem.md) (the Stripe architecture these rules will eventually run on).
+The commercial rules behind the Productised AI pricing shown on `pricing.html`. Read alongside [`PricingStrategy.md`](PricingStrategy.md) (the original numbers/reasoning) and [`PaymentSystem.md`](PaymentSystem.md) (the Stripe architecture these rules will eventually run on).
 
 ## The model: setup fee + monthly service fee
 

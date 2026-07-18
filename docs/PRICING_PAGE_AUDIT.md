@@ -1,6 +1,6 @@
 # Pricing Page Audit
 
-Audit of `pricing-mockup.html` (the working draft — not yet live, `noindex`, unlinked from nav) before implementing the requested improvements. This is an audit of what actually exists, not a generic checklist — every finding below was checked against the real code, not assumed.
+Audit of the working draft (at the time, `pricing-mockup.html` — a `noindex`, unlinked page, since promoted to the live `pricing.html`) before implementing the requested improvements. This is an audit of what actually existed at the time, not a generic checklist — every finding below was checked against the real code, not assumed.
 
 ## Confusing wording
 - "One setup fee, then a simple monthly plan" (intro) doesn't actually explain what either fee *covers* — a prospective client can't tell if setup means "you configure it" or "you build it from scratch."
