@@ -133,6 +133,7 @@ async function sendInternalNotificationEmail(enquiry) {
         <li><strong>Preferred contact:</strong> ${escapeHtml(enquiry.preferredContact)}</li>
         <li><strong>Preferred meeting time:</strong> ${escapeHtml(enquiry.preferredMeetingTime) || "—"}</li>
         <li><strong>Services interested in:</strong> ${serviceList(enquiry)}</li>
+        <li><strong>Selected pricing plan:</strong> ${escapeHtml(enquiry.selectedPlan) || "—"}</li>
         <li><strong>Urgency:</strong> ${escapeHtml(enquiry.urgency)}</li>
         <li><strong>Project description:</strong> ${escapeHtml(enquiry.projectDescription)}</li>
       </ul>

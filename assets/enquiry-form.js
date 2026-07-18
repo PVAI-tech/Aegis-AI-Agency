@@ -12,6 +12,33 @@
   if (!form) return;
   const status = document.getElementById("formStatus");
 
+  // Pre-fill from a pricing-card CTA (e.g. enquiry.html?plan=professional).
+  const PLAN_NAMES = {
+    starter: "Starter AI", professional: "Professional AI",
+    business: "Business AI", enterprise: "Enterprise"
+  };
+  (function prefillPlan() {
+    const plan = new URLSearchParams(location.search).get("plan");
+    if (!plan || !PLAN_NAMES[plan]) return;
+    const hidden = document.getElementById("selectedPlan");
+    if (hidden) hidden.value = PLAN_NAMES[plan];
+    const banner = document.getElementById("planBanner");
+    const bannerName = document.getElementById("planBannerName");
+    if (banner && bannerName) {
+      bannerName.textContent = PLAN_NAMES[plan];
+      banner.hidden = false;
+    }
+    const chatbotCheckbox = form.querySelector('[name="servicesInterested"][value="AI Chatbot"]');
+    if (chatbotCheckbox) chatbotCheckbox.checked = true;
+    const clearBtn = document.getElementById("planBannerClear");
+    if (clearBtn) {
+      clearBtn.addEventListener("click", () => {
+        if (hidden) hidden.value = "";
+        if (banner) banner.hidden = true;
+      });
+    }
+  })();
+
   const REQUIRED_FIELDS = ["fullName", "businessName", "email", "phone", "industry", "businessSize", "budget", "projectDescription", "urgency"];
 
   function setError(name, hasError) {

@@ -108,7 +108,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- ENQUIRY FORM -->
 <section>
   <div class="wrap-sm">
+    <div id="planBanner" class="plan-banner" hidden>
+      Enquiring about: <strong id="planBannerName"></strong> <button type="button" id="planBannerClear" aria-label="Clear selected plan">Clear</button>
+    </div>
     <form class="enquiry-form rv" id="enquiryForm" novalidate>
+      <input type="hidden" id="selectedPlan" name="selectedPlan" value=""/>
       <div class="field">
         <label for="fullName">Full Name <span class="req">*</span></label>
         <input type="text" id="fullName" name="fullName" placeholder="Your full name" required/>

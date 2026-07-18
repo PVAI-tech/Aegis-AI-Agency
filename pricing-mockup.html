@@ -110,77 +110,163 @@
       </div>
     </div>
 
-    <!-- MOTION 2: PRODUCTIZED AI (new) -->
+    <!-- MOTION 2: PRODUCTISED AI (new) -->
     <div class="motion-divider">
       <span class="stag rv">Motion 2 — Ongoing Subscription</span>
-      <h3 class="sh" style="font-size:1.6rem;">Productized AI</h3>
-      <p class="ss" style="max-width:560px;margin:.5rem auto 0;">A branded AI assistant for your business — trained on your products and FAQs, live on your site (and WhatsApp, from Professional up). One setup fee, then a simple monthly plan.</p>
+      <h3 class="sh" style="font-size:1.6rem;">Productised AI</h3>
+      <p class="ss" style="max-width:620px;margin:.5rem auto 0;">A branded AI assistant, configured for your business. One implementation fee to configure, brand, test and launch it — one monthly plan for hosting, included AI usage, monitoring and support.</p>
+      <p class="ss" style="max-width:620px;margin:.6rem auto 0;font-size:.82rem;" data-pricing-field="vatNote"></p>
     </div>
-    <div class="price-grid-4">
-      <div class="pc rv d1">
-        <div class="pc-name">Starter AI</div>
-        <div class="pc-price-split">
-          <div class="pc-setup">Setup: <strong>£299</strong></div>
-          <div class="pc-monthly"><sup>£</sup>59<span>/mo</span></div>
-        </div>
-        <ul class="pc-feats">
-          <li><span class="fi">✓</span>1 AI assistant</li>
-          <li><span class="fi">✓</span>300 conversations/mo</li>
-          <li><span class="fi">✓</span>Web widget</li>
-          <li><span class="fi">✓</span>~20 knowledge base items</li>
-          <li><span class="fi">✓</span>Email support (48h)</li>
-        </ul>
-        <a href="#" class="btn-price btn-out">Get Started →</a>
+
+    <div class="price-grid-4" id="productisedAiCards" aria-label="Productised AI pricing plans">
+      <!-- rendered by assets/pricing-render.js from assets/pricing-data.js -->
+    </div>
+
+    <!-- USAGE POLICY -->
+    <div class="pricing-usage-box rv">
+      <h4>What counts as a conversation?</h4>
+      <p data-pricing-field="usage.definition"></p>
+      <p style="font-style:italic;">⚠ This limit is provisional. Usage metering isn't built yet — no client is currently billed against this definition, and displayed limits will be confirmed once real tracking is in place.</p>
+      <h4>Knowledge sources</h4>
+      <p data-pricing-field="knowledgeSourceNote"></p>
+      <h4>If you reach your monthly limit</h4>
+      <p data-pricing-field="overagePolicy.description"></p>
+      <div class="usage-alert-row">
+        <span class="usage-alert-chip">Alert at 70% used</span>
+        <span class="usage-alert-chip">Alert at 90% used</span>
+        <span class="usage-alert-chip">Alert at 100% used</span>
       </div>
-      <div class="pc rv d2" style="border-color:rgba(91,95,233,.5);box-shadow:0 0 0 1px rgba(91,95,233,.22),0 0 80px rgba(91,95,233,.12);">
-        <span class="pc-badge pb-best">Most Popular</span>
-        <div class="pc-name">Professional AI</div>
-        <div class="pc-price-split">
-          <div class="pc-setup">Setup: <strong>£599</strong></div>
-          <div class="pc-monthly"><sup>£</sup>119<span>/mo</span></div>
-        </div>
-        <ul class="pc-feats">
-          <li><span class="fi">✓</span>1 AI assistant</li>
-          <li><span class="fi">✓</span>1,500 conversations/mo</li>
-          <li><span class="fi">✓</span>Web + WhatsApp</li>
-          <li><span class="fi">✓</span>~100 knowledge base items</li>
-          <li><span class="fi">✓</span>Lead capture integration</li>
-          <li><span class="fi">✓</span>Priority support (24h)</li>
-        </ul>
-        <a href="#" class="btn-price btn-fill">Get Started →</a>
+      <p data-pricing-field="overagePolicy.resetCycle"></p>
+      <p style="font-size:.8rem;font-style:italic;">Automatic top-up billing is planned but not yet built (Stripe overage billing isn't configured — see docs/PaymentSystem.md). For now, all top-ups are approved manually with the client before being applied.</p>
+    </div>
+
+    <!-- MINIMUM TERM / BILLING / CANCELLATION -->
+    <div class="pricing-usage-box rv">
+      <h4>Minimum term &amp; billing</h4>
+      <p data-pricing-field="minimumTerm"></p>
+      <p data-pricing-field="billing.startsWhen"></p>
+      <p data-pricing-field="billing.cancellation"></p>
+      <p data-pricing-field="billing.setupRefund"></p>
+      <p data-pricing-field="billing.dataExport"></p>
+      <p style="font-size:.8rem;font-style:italic;">All of the above is a summary, not the contract — full terms are set out in the signed service agreement.</p>
+    </div>
+
+    <!-- COMPARISON TABLE (desktop) / ACCORDION (mobile) -->
+    <div class="sec-hd c rv" style="margin-top:3rem;">
+      <h3 class="sh" style="font-size:1.4rem;">Compare Every Plan</h3>
+    </div>
+    <div class="pricing-table-wrap">
+      <table class="pricing-table" id="pricingComparisonTable" aria-label="Productised AI plan comparison"></table>
+    </div>
+    <div id="pricingComparisonAccordion" class="faq-list" aria-label="Productised AI plan comparison (mobile)"></div>
+
+    <!-- ADD-ONS -->
+    <div class="sec-hd c rv" style="margin-top:3rem;">
+      <h3 class="sh" style="font-size:1.4rem;">Optional Add-Ons</h3>
+      <p class="ss">Priced separately from the core plans above — shown as a starting "from" price, confirmed exactly during scoping.</p>
+    </div>
+    <ul class="addons-list rv" id="pricingAddOns"></ul>
+    <p class="ss" style="text-align:center;margin-top:1rem;font-size:.82rem;">Third-party platform and messaging fees are charged separately where applicable.</p>
+
+    <!-- EXCLUSIONS -->
+    <div class="sec-hd c rv" style="margin-top:3rem;">
+      <h3 class="sh" style="font-size:1.4rem;">What's Not Included?</h3>
+      <p class="ss">Standard plans are built for a branded AI assistant answering business/product questions — not everything AI-related. The following are available by separate quotation where appropriate:</p>
+    </div>
+    <ul class="exclusions-list rv" id="pricingExclusions"></ul>
+
+    <!-- TRUST / AI SAFETY -->
+    <div class="pricing-trust-box rv">
+      <h4 style="font-size:1.1rem;font-weight:700;margin-bottom:.8rem;">How we handle data, accuracy &amp; risk</h4>
+      <p>Each assistant is configured with defined use cases, approved source material, usage controls and escalation rules. Personal-data requirements are assessed during onboarding.</p>
+      <p><strong>AI responses may contain errors and should not replace professional medical, legal or financial advice.</strong></p>
+      <p>For high-risk or regulated projects, additional discovery, human oversight, risk assessment and compliance review will be required. We do not claim every project is automatically compliant with GDPR, the EU AI Act, UK medical-device rules, or any other regulation — see <a href="ai-disclaimer.html" style="color:var(--blue);">our AI Disclaimer</a>.</p>
+    </div>
+
+    <!-- CLIENT RESPONSIBILITIES -->
+    <div class="sec-hd c rv" style="margin-top:3rem;">
+      <h3 class="sh" style="font-size:1.4rem;">What We Need From You</h3>
+      <p class="ss">To hit the implementation timeline above, we'll need:</p>
+    </div>
+    <ul class="legal-list rv" id="pricingClientResponsibilities" style="max-width:560px;margin:0 auto 2rem;"></ul>
+    <p class="ss" style="text-align:center;font-size:.85rem;">Delays in receiving these may move the launch date — timelines begin once the deposit, approved content and required system access have been received.</p>
+
+    <!-- PRICING FAQ -->
+    <div class="sec-hd c rv" style="margin-top:3rem;">
+      <h3 class="sh" style="font-size:1.4rem;">Pricing FAQ</h3>
+    </div>
+    <div class="faq-list rv">
+      <div class="faq-item">
+        <button class="faq-q">What does the setup fee cover?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="faq-a"><div class="faq-a-in">Configuring, branding, testing and launching your AI assistant — training it on your approved content, setting up the channels included in your plan, and a working handover.</div></div>
       </div>
-      <div class="pc rv d3">
-        <div class="pc-name">Business AI</div>
-        <div class="pc-price-split">
-          <div class="pc-setup">Setup: <strong>£1,199</strong></div>
-          <div class="pc-monthly"><sup>£</sup>249<span>/mo</span></div>
-        </div>
-        <ul class="pc-feats">
-          <li><span class="fi">✓</span>Up to 2 AI assistants</li>
-          <li><span class="fi">✓</span>5,000 conversations/mo</li>
-          <li><span class="fi">✓</span>Web + WhatsApp + booking</li>
-          <li><span class="fi">✓</span>CRM integration (1 system)</li>
-          <li><span class="fi">✓</span>Monthly review call</li>
-          <li><span class="fi">✓</span>Same-day support</li>
-        </ul>
-        <a href="#" class="btn-price btn-out">Get Started →</a>
+      <div class="faq-item">
+        <button class="faq-q">What does the monthly fee cover?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="faq-a"><div class="faq-a-in">Hosting, your included monthly usage allowance, monitoring, and support at the response window stated on your plan.</div></div>
       </div>
-      <div class="pc rv d4">
-        <div class="pc-name">Enterprise</div>
-        <div class="pc-amt" style="font-size:1.8rem;margin-top:1.6rem;">Custom</div>
-        <p class="pc-note">Multiple locations/brands, dedicated account management, custom integrations, SLA</p>
-        <ul class="pc-feats">
-          <li><span class="fi">✓</span>Multiple assistants</li>
-          <li><span class="fi">✓</span>Custom conversation volume</li>
-          <li><span class="fi">✓</span>All channels + voice</li>
-          <li><span class="fi">✓</span>Dedicated account manager</li>
-        </ul>
-        <a href="#" class="btn-price btn-out">Book a Call →</a>
+      <div class="faq-item">
+        <button class="faq-q">What counts as a conversation?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="faq-a"><div class="faq-a-in">One customer chat session lasting up to 24 hours and containing up to 20 user messages. This definition is provisional until real usage metering is built — see the usage policy above.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What happens if I reach my usage limit?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="faq-a"><div class="faq-a-in">You're alerted at 70%, 90% and 100% of your monthly allowance. Nothing is billed unexpectedly — you choose a manual top-up, or the assistant pauses at your limit until it resets.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Are WhatsApp fees included?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="faq-a"><div class="faq-a-in">WhatsApp integration is available as an add-on from Professional AI upward, subject to technical scoping. Third-party messaging fees from WhatsApp/Meta may apply separately.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">When does monthly billing begin?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="faq-a"><div class="faq-a-in">On your launch date, billed in advance for each period.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is there a minimum term? Can I cancel?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="faq-a"><div class="faq-a-in">Plans begin with a three-month minimum term following launch, then continue monthly. Cancel any time after that — it takes effect at the end of your current billing period. Full terms are in the signed service agreement.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can I change plans?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="faq-a"><div class="faq-a-in">Yes — upgrade or downgrade at your next billing date. Ask via your account contact.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Are integrations included?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="faq-a"><div class="faq-a-in">Depends on the plan — see the comparison table above. Complex or non-standard integrations always require separate scoping regardless of plan.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Who owns the final system?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="faq-a"><div class="faq-a-in">You own your configuration and data outright. The underlying reusable Aegis platform code that powers every client's assistant remains Aegis's, licensed to you as part of your subscription — this is how the product stays affordable, rather than a from-scratch build each time.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What data does the AI process?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="faq-a"><div class="faq-a-in">Only the approved knowledge sources you provide and the conversation itself. Personal-data handling requirements are assessed during onboarding — see our <a href="privacy-policy.html" style="color:var(--blue);">Privacy Policy</a>.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is the assistant guaranteed to be accurate?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="faq-a"><div class="faq-a-in">No. AI responses may contain errors. It shouldn't be relied on for medical, legal or financial decisions — see our <a href="ai-disclaimer.html" style="color:var(--blue);">AI Disclaimer</a>.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can this be used for medical, legal or financial advice?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="faq-a"><div class="faq-a-in">Not as a substitute for professional advice. Regulated use cases need additional discovery, human oversight and compliance review before launch.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How long does implementation take?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="faq-a"><div class="faq-a-in">Starter: ~5–7 UK business days. Professional: ~1–2 weeks. Business: ~2–4 weeks. Enterprise: agreed after discovery. Timelines begin once your deposit, approved content and required access have been received.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What do I need to provide?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="faq-a"><div class="faq-a-in">Accurate business information, approved content, brand assets, any needed system access, escalation instructions, and one named contact for approvals.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Are third-party costs included?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="faq-a"><div class="faq-a-in">No — third-party platform and messaging fees (e.g. WhatsApp/Meta) are charged separately where applicable.</div></div>
       </div>
     </div>
-    <p class="ss" style="text-align:center;margin-top:2rem;font-size:.82rem;">Extra conversations beyond your plan: £15 / £12 / £10 per additional 100 (Starter / Professional / Business). See <code>docs/PricingStrategy.md</code> for full reasoning.</p>
+
   </div>
 </section>
 
+<script src="assets/pricing-data.js"></script>
+<script src="assets/site.js" defer></script>
+<script src="assets/pricing-render.js" defer></script>
 </body>
 </html>
