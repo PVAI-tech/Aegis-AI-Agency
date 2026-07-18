@@ -1,19 +1,10 @@
-/* Conversion features: scroll progress bar, sticky CTA bar, and a single
-   "Free AI Business Audit" modal triggered by exit-intent on desktop or
-   scroll depth on mobile (once per session either way). */
+/* Conversion features: sticky CTA bar, and a single "Free AI Business
+   Audit" modal triggered by exit-intent on desktop or scroll depth on
+   mobile (once per session either way). */
 (function () {
   "use strict";
 
   const CALENDLY = "https://calendly.com/aegishealthai/30min?back=1&month=2026-06";
-
-  // --- Scroll progress bar -------------------------------------------------
-  const progress = document.getElementById("scrollProgress");
-  function updateProgress() {
-    if (!progress) return;
-    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
-    progress.style.width = Math.min(100, Math.max(0, pct)) + "%";
-  }
 
   // --- Sticky CTA bar -------------------------------------------------------
   const stickyCta = document.getElementById("stickyCta");
@@ -30,7 +21,6 @@
   }
 
   function onScroll() {
-    updateProgress();
     updateStickyCta();
   }
   window.addEventListener("scroll", onScroll, { passive: true });

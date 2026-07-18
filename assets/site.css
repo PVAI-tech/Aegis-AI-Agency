@@ -714,14 +714,14 @@ footer{
 ============================================= */
 #wa{
   position:fixed;bottom:2rem;right:2rem;z-index:900;
-  width:56px;height:56px;border-radius:50%;
-  background:linear-gradient(135deg,#25D366,#128C7E);
+  width:52px;height:52px;border-radius:50%;
+  background:#20B858;
   display:flex;align-items:center;justify-content:center;
-  box-shadow:0 0 30px rgba(37,211,102,.42),0 8px 25px rgba(0,0,0,.35);
-  transition:all .35s var(--spring);border:none;cursor:pointer;
+  box-shadow:0 4px 16px rgba(0,0,0,.35);
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease);border:none;cursor:pointer;
   text-decoration:none;
 }
-#wa:hover{transform:scale(1.14) translateY(-3px);box-shadow:0 0 55px rgba(37,211,102,.65),0 14px 38px rgba(0,0,0,.4);}
+#wa:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.4);}
 #wa svg{width:27px;height:27px;fill:#fff;}
 .wa-tip{
   position:absolute;right:68px;
@@ -736,12 +736,6 @@ footer{
 /* =============================================
    CONVERSION FEATURES
 ============================================= */
-#scrollProgress{
-  position:fixed;top:0;left:0;height:3px;width:0%;
-  background:linear-gradient(90deg,var(--blue),var(--cyan),var(--violet));
-  z-index:1200;transition:width .1s linear;
-  box-shadow:0 0 8px rgba(91,95,233,.6);
-}
 #stickyCta{
   position:fixed;left:0;right:0;z-index:950;
   background:rgba(4,7,15,.96);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
@@ -835,28 +829,19 @@ footer{
 ============================================= */
 #jarvisLauncher{
   position:fixed;bottom:2rem;left:2rem;z-index:900;
-  width:60px;height:60px;border-radius:50%;
+  width:52px;height:52px;border-radius:50%;
   background:none;border:none;cursor:pointer;padding:0;
 }
 .jarvis-launcher-orb{
-  position:absolute;inset:6px;border-radius:50%;
-  background:radial-gradient(circle at 35% 30%,#fff,var(--cyan) 40%,var(--indigo) 100%);
-  box-shadow:0 0 30px rgba(91,95,233,.6),0 8px 25px rgba(0,0,0,.35);
-  transition:transform .35s var(--spring),box-shadow .35s;
+  position:absolute;inset:0;border-radius:50%;
+  background:var(--blue);
+  box-shadow:0 4px 16px rgba(0,0,0,.35);
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease);
   display:flex;align-items:center;justify-content:center;
 }
-.jarvis-launcher-orb::before{content:'✦';font-size:1.3rem;color:#fff;}
-#jarvisLauncher:hover .jarvis-launcher-orb{transform:scale(1.12);box-shadow:0 0 50px rgba(91,95,233,.8),0 10px 30px rgba(0,0,0,.4);}
-.jarvis-launcher-ring{
-  position:absolute;inset:0;border-radius:50%;
-  border:2px solid rgba(91,95,233,.5);
-  animation:jarvis-ripple 2.4s ease-out infinite;
-}
-.jarvis-launcher-ring.r2{animation-delay:1.2s;}
-@keyframes jarvis-ripple{
-  0%{transform:scale(.8);opacity:.8;}
-  100%{transform:scale(1.6);opacity:0;}
-}
+.jarvis-launcher-orb::before{content:'✦';font-size:1.2rem;color:#fff;}
+#jarvisLauncher:hover .jarvis-launcher-orb{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.4);}
+.jarvis-launcher-ring{display:none;}
 
 .jarvis-panel{
   position:fixed;bottom:6.5rem;left:2rem;z-index:901;
