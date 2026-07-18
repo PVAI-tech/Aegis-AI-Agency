@@ -20,11 +20,29 @@
     stickyCta.classList.toggle("show", past);
   }
 
+  // --- Floating WhatsApp/Jarvis buttons vs. hero CTAs (mobile only) --------
+  // On narrow viewports the hero is taller than the screen, so its own
+  // "View Portfolio" button can land directly behind these fixed-position
+  // buttons. Hiding them until the hero scrolls out of view avoids the
+  // collision without having to fight hero padding/height on every screen
+  // size the hero content might reflow to.
+  const waBtn = document.getElementById("wa");
+  const jarvisBtn = document.getElementById("jarvisLauncher");
+  function updateFloatingButtons() {
+    if (!heroEl || (!waBtn && !jarvisBtn)) return;
+    const isMobile = window.innerWidth <= 520;
+    const pastHero = heroEl.getBoundingClientRect().bottom < 0;
+    const hide = isMobile && !pastHero;
+    if (waBtn) waBtn.classList.toggle("floating-hidden", hide);
+    if (jarvisBtn) jarvisBtn.classList.toggle("floating-hidden", hide);
+  }
+
   function onScroll() {
     updateStickyCta();
+    updateFloatingButtons();
   }
   window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", positionStickyCta);
+  window.addEventListener("resize", () => { positionStickyCta(); updateFloatingButtons(); });
   positionStickyCta();
   onScroll();
 

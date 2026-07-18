@@ -698,11 +698,12 @@ footer{
   background:#20B858;
   display:flex;align-items:center;justify-content:center;
   box-shadow:0 4px 16px rgba(0,0,0,.35);
-  transition:transform .25s var(--ease),box-shadow .25s var(--ease);border:none;cursor:pointer;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease),opacity .25s var(--ease);border:none;cursor:pointer;
   text-decoration:none;
 }
 #wa:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.4);}
 #wa svg{width:27px;height:27px;fill:#fff;}
+.floating-hidden{opacity:0!important;pointer-events:none!important;transform:translateY(12px)!important;}
 .wa-tip{
   position:absolute;right:68px;
   background:rgba(4,7,15,.96);border:1px solid var(--border);
@@ -811,6 +812,7 @@ footer{
   position:fixed;bottom:2rem;left:2rem;z-index:900;
   width:52px;height:52px;border-radius:50%;
   background:none;border:none;cursor:pointer;padding:0;
+  transition:opacity .25s var(--ease),transform .25s var(--ease);
 }
 .jarvis-launcher-orb{
   position:absolute;inset:0;border-radius:50%;
@@ -948,8 +950,8 @@ footer{
   .ft-main{flex-direction:column;}
 }
 @media(max-width:520px){
+  #hero{padding:7rem 6% 3rem;}
   .hero-btns{flex-direction:column;align-items:center;}
-  .hero-grid{display:none;}
   .price-grid{grid-template-columns:1fr;}
   .ba-grid{grid-template-columns:1fr;}
   section{padding:4rem 5%;}
