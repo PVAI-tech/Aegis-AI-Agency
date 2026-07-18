@@ -26,7 +26,7 @@ WEBSITE_AUDIT.md                Most recent full-site audit
 
 ## Why HTML isn't shared across pages
 
-There's no templating engine (see `ADR.md`), so the nav, footer, loader markup, and floating-widget markup are copy-pasted byte-for-byte across all 7 pages. This is the single riskiest part of the architecture: a change to shared boilerplate (e.g. adding a nav link) has to be applied identically 7 times by hand or by a careful find-and-replace script — there's no compiler to catch a page that got missed. When editing shared boilerplate, grep across all `*.html` files to confirm the change landed everywhere it should.
+There's no templating engine (see [`ADR.md`](ADR.md)), so the nav, footer, loader markup, and floating-widget markup are copy-pasted byte-for-byte across all 7 pages. This is the single riskiest part of the architecture: a change to shared boilerplate (e.g. adding a nav link) has to be applied identically 7 times by hand or by a careful find-and-replace script — there's no compiler to catch a page that got missed. When editing shared boilerplate, grep across all `*.html` files to confirm the change landed everywhere it should.
 
 ## The service-modal data flow
 

@@ -13,5 +13,5 @@ Institutional knowledge that isn't obvious from reading the code — for whoever
 
 ## Decisions made under real constraints, not preferences
 
-- HTML injection into enquiry emails and missing rate-limiting were found and fixed as *bugs*, not style choices — see `Security.md`. If similar patterns (unescaped user input going into HTML/emails) show up elsewhere, treat it the same way.
+- HTML injection into enquiry emails and missing rate-limiting were found and fixed as *bugs*, not style choices — see [`Security.md`](Security.md). If similar patterns (unescaped user input going into HTML/emails) show up elsewhere, treat it the same way.
 - A pre-existing stray `</div>` in the FAQ section (unrelated to any specific feature work) was found via a proper HTML-parser-based tag-balance check, not visual inspection — worth remembering that naive open/close tag *counting* can miss real mismatches that a parser catches.

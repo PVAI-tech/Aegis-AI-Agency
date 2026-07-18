@@ -8,7 +8,7 @@
 ## Serverless function requirements
 - `api/enquiry.js` runs on Vercel's Node.js runtime, auto-detected from the `/api` directory — no `vercel.json` function config needed.
 - Requires `RESEND_API_KEY` set in Vercel's Environment Variables (Production) to actually send email. Without it, the endpoint still validates and responds successfully, but no email is sent (logged server-side only).
-- Cannot be tested against the local static file server — see `Testing.md`.
+- Cannot be tested against the local static file server — see [`Testing.md`](Testing.md).
 
 ## Third-party dependencies (all runtime, no npm packages)
 | Service | Purpose | Where |
@@ -20,7 +20,7 @@
 | Google Analytics 4 / Google Tag Manager | Analytics | Present but **commented out** in every page `<head>` — inert until real IDs are pasted in |
 
 ## DNS/email note
-The domain's DNS is on Wix, which does **not** support custom subdomain MX records — this blocked verifying `aegishealthai.co.uk` as a sending domain in Resend for the "custom MAIL FROM" / bounce-handling subdomain record. As of this writing, email sends from Resend's shared `onboarding@resend.dev` address rather than a `@aegishealthai.co.uk` address. See `Roadmap.md` for the options (move DNS to a provider like Cloudflare, or accept the shared sending address).
+The domain's DNS is on Wix, which does **not** support custom subdomain MX records — this blocked verifying `aegishealthai.co.uk` as a sending domain in Resend for the "custom MAIL FROM" / bounce-handling subdomain record. As of this writing, email sends from Resend's shared `onboarding@resend.dev` address rather than a `@aegishealthai.co.uk` address. See [`Roadmap.md`](Roadmap.md) for the options (move DNS to a provider like Cloudflare, or accept the shared sending address).
 
 ## Required manual setup for a fresh deployment
 1. Connect the GitHub repo to a new Vercel project.

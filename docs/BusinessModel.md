@@ -16,13 +16,13 @@ The brief asks for three "divisions." I'd resist actually running them as three 
 
 That one line should be the thing already proven, twice, in real client work: a **branded AI Concierge/Assistant** — the same underlying pattern as Hera (H.Sheikh London) and the Beauty Concierge (Slay Beauty London), packaged as a repeatable product instead of a bespoke build each time. Concretely: a chat widget trained on a specific business's products/services/FAQs, brandable (name, avatar, tone), with a fixed integration path (embed script + a config file, not a from-scratch build per client).
 
-Once that's selling and retaining well, the natural second product is a **Booking/Lead-Qualification Assistant** — Aegis already builds booking systems and lead-gen pipelines as bespoke services; templating that into a product is a much smaller lift than inventing "AI Pharmacy Assistant" from nothing. Everything else on the 14-item list (Voice AI, HR Assistant, Document Assistant, etc.) is a **future roadmap item**, not a day-one SKU — see `Roadmap.md`.
+Once that's selling and retaining well, the natural second product is a **Booking/Lead-Qualification Assistant** — Aegis already builds booking systems and lead-gen pipelines as bespoke services; templating that into a product is a much smaller lift than inventing "AI Pharmacy Assistant" from nothing. Everything else on the 14-item list (Voice AI, HR Assistant, Document Assistant, etc.) is a **future roadmap item**, not a day-one SKU — see [`Roadmap.md`](Roadmap.md).
 
 **Why this matters financially:** a subscription only works if the marginal cost of serving one more client is low and predictable. A templated Concierge product (same core code, different config/branding per client) has that property. Fourteen bespoke "products" built one-off per client does not — that's just Custom Development wearing a subscription price tag, and the margins won't hold.
 
 ### Motion 2 — Custom Development (high-ticket, project-based)
 
-This is closest to what Aegis already does well — websites, bespoke AI assistants, automation, dashboards — and needs the least reinvention. The change is formalizing the process (see `ClientJourney.md`) and pricing it in ranges tied to real scope instead of ad-hoc quoting. See `PricingStrategy.md`.
+This is closest to what Aegis already does well — websites, bespoke AI assistants, automation, dashboards — and needs the least reinvention. The change is formalizing the process (see [`ClientJourney.md`](ClientJourney.md)) and pricing it in ranges tied to real scope instead of ad-hoc quoting. See [`PricingStrategy.md`](PricingStrategy.md).
 
 **Honest scope check:** the current portfolio (4 case studies) demonstrates websites, embedded AI assistants, and automation — genuinely strong evidence for those categories. It does **not** yet demonstrate native mobile app development or large enterprise software platforms. Both are listed in the brief's Custom Development examples. Two honest options: (a) treat those as real capability gaps to close before selling into them confidently, or (b) take them on selectively with a trusted subcontractor/partner for the mobile-specific work while Aegis leads the AI/product side. Pretending equal depth across all six listed categories would be the same mistake as the fabricated stats this project has already had to walk back once — don't oversell capability that isn't demonstrated yet.
 
@@ -44,4 +44,4 @@ At the drafted Professional-AI-tier price point (~£99–149/mo), reaching meani
 
 - Keep the current portfolio/case-study-led positioning for Custom Development — it's honest and it's working.
 - Add a distinct, clearly-labeled section (or dedicated page) for the Productized AI line once it exists as a real, demoable product — not before. Advertising a product that isn't built yet is the same fabrication risk flagged earlier in this project.
-- Pricing page redesign (see `PricingStrategy.md`) should present Custom Development and Productized AI as genuinely different purchase paths, not force them into one three-tier grid the way the current page does.
+- Pricing page redesign (see [`PricingStrategy.md`](PricingStrategy.md)) should present Custom Development and Productized AI as genuinely different purchase paths, not force them into one three-tier grid the way the current page does.

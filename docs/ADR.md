@@ -32,7 +32,7 @@ Short-form log of the decisions that would otherwise be invisible to a future co
 
 **Decision:** `api/enquiry.js` rate-limits by IP using an in-memory `Map`, not Redis/Upstash/Vercel KV.
 
-**Why:** This project has no other need for an external data store, and current traffic doesn't justify the added dependency and cost. Documented as "best effort" (resets on cold start, not shared across concurrent instances) with the upgrade path noted in code comments and `Security.md`.
+**Why:** This project has no other need for an external data store, and current traffic doesn't justify the added dependency and cost. Documented as "best effort" (resets on cold start, not shared across concurrent instances) with the upgrade path noted in code comments and [`Security.md`](Security.md).
 
 ## ADR-006: Jarvis widget ships with canned responses, not a live model
 

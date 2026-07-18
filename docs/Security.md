@@ -23,7 +23,7 @@
 ## What's explicitly NOT done (known gaps)
 
 - **No CSRF token** on the enquiry form. Low risk in practice (the endpoint only accepts a specific field shape and doesn't perform any state-changing action beyond sending email/rate-limit bookkeeping), but worth revisiting if the form's capability ever expands (e.g. to accept file uploads or trigger payments).
-- **No automated dependency/vulnerability scanning** — there are no npm dependencies to scan (see `TRD.md`), but the CDN-hosted Google Fonts/Calendly/GTM scripts are trusted third parties without subresource integrity (SRI) hashes.
+- **No automated dependency/vulnerability scanning** — there are no npm dependencies to scan (see [`TRD.md`](TRD.md)), but the CDN-hosted Google Fonts/Calendly/GTM scripts are trusted third parties without subresource integrity (SRI) hashes.
 - **No WAF or DDoS protection** beyond whatever Vercel provides by default on the Hobby tier.
 - **No logging/alerting on repeated rate-limit hits** — a sustained attack would currently just silently return 429s rather than notify anyone.
 

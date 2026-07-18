@@ -20,7 +20,7 @@
 ## Enquiry pipeline
 1. `enquiry.html` — full qualifying form (business details, budget, services interested, urgency, etc.), client-side validated in `assets/enquiry-form.js`.
 2. Submits to `POST /api/enquiry` — server-side validated, rate-limited, sends two emails (client confirmation + internal notification) via Resend.
-3. Redirects to `thank-you.html` on success; shows an inline error on a real rejection (e.g. rate-limited); still redirects on a network-level failure (expected in local dev, see `Testing.md`).
+3. Redirects to `thank-you.html` on success; shows an inline error on a real rejection (e.g. rate-limited); still redirects on a network-level failure (expected in local dev, see [`Testing.md`](Testing.md)).
 
 ## Conversion features
 - Sticky "Book a Call" bar, appears once the hero scrolls out of view.

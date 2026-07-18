@@ -33,5 +33,5 @@ Small and growing UK businesses who:
 
 ## Constraints
 
-- Must stay static HTML/CSS/JS (see `ADR.md`)
+- Must stay static HTML/CSS/JS (see [`ADR.md`](ADR.md))
 - Must not fabricate stats, testimonials, or client logos — every claim on the site must be verifiable (this was an explicit, repeated instruction during development after earlier drafts included invented numbers)

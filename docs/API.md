@@ -40,8 +40,8 @@ Validates and processes a submission from `enquiry.html`.
 ### Behavior notes
 
 - A `200` response does **not** guarantee an email was sent — if `RESEND_API_KEY` is missing or Resend's API rejects the request, `notifyChannels()` logs the error server-side but the enquiry itself is still considered successfully received (the submitted data was valid regardless of downstream notification success).
-- Every field is HTML-escaped before being placed into the notification emails — see `Security.md`.
-- This function only runs once deployed to Vercel; the local static-file dev server cannot execute it (see `Testing.md`).
+- Every field is HTML-escaped before being placed into the notification emails — see [`Security.md`](Security.md).
+- This function only runs once deployed to Vercel; the local static-file dev server cannot execute it (see [`Testing.md`](Testing.md)).
 
 ### Downstream integrations (stubbed, not connected)
 

@@ -45,4 +45,4 @@ This is the part your brief explicitly asked to be precise about — vague timin
 
 1. Confirmation you want to proceed with implementation now (vs. later).
 2. The three keys above, added as Vercel environment variables (same process as `RESEND_API_KEY` — I won't ask you to paste secret keys directly into chat; add them in the Vercel dashboard and confirm once done).
-3. Your actual Stripe account's product/price IDs once the tiers in `PricingStrategy.md` are finalized — these get created in the Stripe Dashboard (Products → Add Product) and referenced by ID in the webhook/checkout code, not hardcoded prices.
+3. Your actual Stripe account's product/price IDs once the tiers in [`PricingStrategy.md`](PricingStrategy.md) are finalized — these get created in the Stripe Dashboard (Products → Add Product) and referenced by ID in the webhook/checkout code, not hardcoded prices.

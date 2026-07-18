@@ -2,7 +2,7 @@
 
 **Not live yet, by design** (per your instruction). These are reasoned starting numbers, not final prices — you know your actual costs (AI API usage, your own time capacity, tooling) better than I do. Treat every number here as a draft to sanity-check, not a decision already made.
 
-## Part 1 — Productized AI (the Concierge line, per `BusinessModel.md`)
+## Part 1 — Productized AI (the Concierge line, per [`BusinessModel.md`](BusinessModel.md))
 
 Pricing separates a one-time **setup fee** (your time: training the assistant on their content, branding, integration) from a **monthly fee** (ongoing hosting, AI usage, and support). This split is the standard SaaS pattern and matches what you asked for.
 
@@ -48,9 +48,9 @@ Ranges, not fixed prices — actual quote depends on scope, confirmed after a di
 6. **Milestone payment(s)** invoiced and cleared before the next phase of work continues, for projects using the 3-payment structure.
 7. **Client review / UAT** — client tests the delivered work against the agreed scope.
 8. **Final payment invoiced and cleared.**
-9. **Ownership transfers, deployment happens, and source code is handed over only once final payment has cleared** — not before, and not on "invoice sent." This should be a real trigger tied to Stripe's payment-succeeded webhook, not a manual/trust-based step (see `docs/PaymentSystem.md`).
+9. **Ownership transfers, deployment happens, and source code is handed over only once final payment has cleared** — not before, and not on "invoice sent." This should be a real trigger tied to Stripe's payment-succeeded webhook, not a manual/trust-based step (see [`PaymentSystem.md`](PaymentSystem.md)).
 10. **Optional Managed Services retainer** offered at this point — first subscription billing cycle starts on a clean date (recommend the 1st of the month following launch, for simple accounting) rather than the exact delivery date.
 
 ## What's next
 
-`docs/PaymentSystem.md` covers the actual Stripe implementation plan (Payment Links/Invoicing for one-off payments, Stripe Billing for subscriptions, the Customer Portal, and exactly which webhook event triggers ownership transfer/deployment) — drafted as architecture now, ready to wire in for real once you confirm you want to proceed and share the relevant Stripe API keys.
+[`PaymentSystem.md`](PaymentSystem.md) covers the actual Stripe implementation plan (Payment Links/Invoicing for one-off payments, Stripe Billing for subscriptions, the Customer Portal, and exactly which webhook event triggers ownership transfer/deployment) — drafted as architecture now, ready to wire in for real once you confirm you want to proceed and share the relevant Stripe API keys.

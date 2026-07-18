@@ -1,17 +1,17 @@
 # Client Journey
 
-The full path from first contact to retained client, with a checklist per stage. This is the operational backbone that `PricingStrategy.md` and `PaymentSystem.md` plug into.
+The full path from first contact to retained client, with a checklist per stage. This is the operational backbone that [`PricingStrategy.md`](PricingStrategy.md) and [`PaymentSystem.md`](PaymentSystem.md) plug into.
 
 ## 1. Lead
 A prospect submits the enquiry form, messages via WhatsApp, or books a call directly.
-- [ ] Enquiry logged (currently: email notification via Resend — see `docs/API.md`)
+- [ ] Enquiry logged (currently: email notification via Resend — see [`API.md`](API.md))
 - [ ] Responded to within the 1-hour promise stated on `thank-you.html`
 
 ## 2. Qualification
 Before a discovery call, confirm this is a real fit.
 - [ ] Budget range matches a realistic service tier (from the enquiry form data)
 - [ ] Timeline expectation is achievable
-- [ ] Not a scope Aegis has flagged as unproven (e.g. mobile app, large enterprise platform — see `BusinessModel.md`) unless a partner is already lined up
+- [ ] Not a scope Aegis has flagged as unproven (e.g. mobile app, large enterprise platform — see [`BusinessModel.md`](BusinessModel.md)) unless a partner is already lined up
 
 ## 3. Discovery call
 - [ ] Business goals and current pain points understood
@@ -29,7 +29,7 @@ Sent after the call to capture detail a live conversation misses (brand assets, 
 
 ## 6. Proposal + Quote
 - [ ] Written, itemized scope (not a verbal estimate)
-- [ ] Price is a specific figure or narrow range, not the full category range from `PricingStrategy.md`
+- [ ] Price is a specific figure or narrow range, not the full category range from [`PricingStrategy.md`](PricingStrategy.md)
 - [ ] Timeline stated in business days, matching real capacity — not optimistic best-case
 
 ## 7. Contract (Statement of Work)
@@ -38,7 +38,7 @@ Sent after the call to capture detail a live conversation misses (brand assets, 
 
 ## 8. Deposit
 - [ ] Stripe Payment Link sent
-- [ ] Development does not start until this clears — see `PaymentSystem.md`
+- [ ] Development does not start until this clears — see [`PaymentSystem.md`](PaymentSystem.md)
 
 ## 9. Kickoff
 - [ ] Access/credentials needed from the client collected (domain, existing hosting, brand assets)
@@ -58,7 +58,7 @@ Sent after the call to capture detail a live conversation misses (brand assets, 
 
 ## 14. Final payment
 - [ ] Invoiced only after step 13
-- [ ] Deployment, domain go-live, and code/asset handover happen only once this clears — see `PaymentSystem.md`
+- [ ] Deployment, domain go-live, and code/asset handover happen only once this clears — see [`PaymentSystem.md`](PaymentSystem.md)
 
 ## 15. Launch
 - [ ] Live URL confirmed working end-to-end (forms, integrations, mobile) before telling the client it's done
@@ -71,4 +71,4 @@ Sent after the call to capture detail a live conversation misses (brand assets, 
 
 ## 18. Monthly retainer (optional)
 - [ ] Offered once, directly, after launch — not repeatedly chased if declined
-- [ ] If accepted: Stripe subscription started per the billing-date rule in `PaymentSystem.md`
+- [ ] If accepted: Stripe subscription started per the billing-date rule in [`PaymentSystem.md`](PaymentSystem.md)
