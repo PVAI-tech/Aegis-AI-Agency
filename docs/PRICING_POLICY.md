@@ -10,7 +10,7 @@ Every plan separates a **one-time setup fee** (configuring, branding, testing an
 
 **Provisional definition:** a conversation is one customer chat session lasting up to 24 hours and containing up to 20 user messages.
 
-**Why "provisional":** the current Jarvis widget has no backend and no usage logging (see [`Database.md`](Database.md), [`Agents.md`](Agents.md)) — there is no live system today that could actually measure this definition for a real subscriber. This is stated openly on the pricing page itself, not hidden. **No client should be billed against a usage limit until real metering exists to enforce it fairly.** Until then, these are directional numbers used for planning and quoting, not a live enforcement mechanism.
+**Why "provisional":** the current Jarvis widget has no backend and no usage logging (see [`Database.md`](Database.md), [`Agents.md`](Agents.md)) — there is no live system today that could actually measure this definition for a real subscriber. See [`UsageMetering.md`](UsageMetering.md) for exactly what would need to be built before this becomes real. This is stated openly on the pricing page itself, not hidden. **No client should be billed against a usage limit until real metering exists to enforce it fairly.** Until then, these are directional numbers used for planning and quoting, not a live enforcement mechanism.
 
 **Knowledge sources:** one approved source = one webpage, one FAQ document, one PDF, or one approved product/service file, subject to file-size and content-volume limits assessed at onboarding — a 500-page document is not automatically "one source."
 

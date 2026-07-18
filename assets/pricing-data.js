@@ -12,7 +12,8 @@ window.PRICING_DATA = {
     // usage logging (see docs/Database.md, docs/Agents.md) — there is no
     // system in place yet to actually count conversations against this
     // definition for a real subscriber. Do not bill against these limits
-    // until metering is built and this TODO is removed.
+    // until metering is built and this TODO is removed. See
+    // docs/UsageMetering.md for the full architecture this needs.
     provisional: true
   },
   knowledgeSourceNote: "An approved knowledge source may be one webpage, one FAQ document, one PDF, or one approved product/service information file. File-size and content-volume limits apply — a 500-page document requires technical review before being counted as a single source.",
