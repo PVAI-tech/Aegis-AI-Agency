@@ -9,6 +9,7 @@
 - `assets/og-image.png` (1200×630) — dark-theme graphic built from the client's actual logo (`assets/logo-icon.png`), not a stock/generic AI image.
 - `application/ld+json` structured data (`ProfessionalService` schema) on the homepage — gives search engines a machine-readable summary of what the business is and how to contact it.
 - Semantic heading structure (`h1` per page, `h2` for major sections) rather than styled `div`s standing in for headings.
+- **Google Ads conversion tracking is live** (Conversion ID `AW-18330436647`) — the base `gtag.js` tag loads on the 8 main marketing pages (homepage, pricing, enquiry, the 4 case studies, thank-you), and the "Submit lead form" conversion event fires specifically on `thank-you.html`, which is only reachable after `api/enquiry.js` accepts a real submission. `vercel.json`'s CSP was updated to allow `googleadservices.com`/`google.com` alongside the existing `googletagmanager.com` entries. No separate GA4 property is configured — only Ads conversion tracking, added because real ad spend started before general analytics was requested. Legal/utility pages intentionally don't carry this tag, same reasoning as the OG-tag omission above.
 
 ## Known gap: no baseline Lighthouse SEO score
 
