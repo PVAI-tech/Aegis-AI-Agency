@@ -8,7 +8,7 @@ Real, known open items — not aspirational feature ideas.
 - **No automated tests** exist (see [`Testing.md`](Testing.md)) — the manual verification approach used during the rebuild works but doesn't protect against future regressions the same way a real test suite would.
 - **Jarvis is not connected to a real AI backend** — see [`Agents.md`](Agents.md). Revisit the "AI Business Consultant" framing once real usage data exists.
 - **CRM / Google Sheets / Jarvis-dashboard logging** for enquiries are stubbed but not implemented (`api/enquiry.js`'s `notifyChannels()`) — only the two email notifications are live.
-- **Stripe is not yet wired into the codebase.** Architecture is planned (see [`PaymentSystem.md`](PaymentSystem.md)) and the client has a Stripe account, but no `api/stripe-*` code exists yet — needs real API keys shared and confirmed before implementation starts.
+- **Stripe webhook is built (`api/stripe-webhook.js`) but not yet registered with Stripe.** See [`PaymentSystem.md`](PaymentSystem.md)'s "Remaining setup steps" — needs `STRIPE_SECRET_KEY`/`STRIPE_PUBLISHABLE_KEY` added to Vercel, the webhook endpoint registered in the Stripe Dashboard, and `STRIPE_WEBHOOK_SECRET` added once Stripe generates it. Not yet exercised against a real Stripe-sent event.
 - **Real usage metering for Productised AI** does not exist — see [`UsageMetering.md`](UsageMetering.md) for the full architecture required (a real AI backend, a database, and an alerting/pause mechanism) and the product/infra decisions that need making first.
 
 ## Explicitly out of scope unless requested

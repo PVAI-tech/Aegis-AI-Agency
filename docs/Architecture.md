@@ -3,26 +3,40 @@
 ## File structure
 
 ```
-index.html                     Homepage — hero, services, portfolio, pricing, about, FAQ, contact
-enquiry.html                   Qualifying enquiry form
+index.html                     Homepage — hero, services, portfolio, pricing (Custom Development), about, FAQ, contact
+pricing.html                    Full pricing page — Custom Development (Motion 1) + Productised AI (Motion 2)
+enquiry.html                   Qualifying enquiry form (supports ?plan= pre-fill from pricing.html)
 thank-you.html                 Post-submission confirmation + next-steps timeline
 case-study-*.html (x4)         Individual portfolio project pages
-api/enquiry.js                 The one serverless function — validates + emails enquiry submissions
+7 legal pages                  privacy-policy, terms-of-service, cookie-policy, ai-usage-policy,
+                                ai-disclaimer, data-processing-notice, accessibility-statement
+api/
+  enquiry.js                   Validates + emails enquiry submissions
+  stripe-webhook.js             Verifies + handles Stripe payment/subscription webhook events
+  _lib/                          Shared helpers (not routes — Vercel ignores underscore-prefixed paths)
+    email.js                     Resend send wrapper
+    text.js                      escapeHtml() / sanitizeForSubject()
+    stripeSignature.js            Manual HMAC-SHA256 webhook signature verification
+    stripeApi.js                  Minimal Stripe REST client (customer lookups)
+    readRawBody.js                 Raw request body reader (needed for signature verification)
 assets/
-  site.css                     Every design token, every shared style — loaded on all 7 pages
-  site.js                      Loader, nav, mobile menu, reveal-on-scroll, FAQ toggle — loaded on all 7 pages
+  site.css                     Every design token, every shared style — loaded on every page
+  site.js                      Loader, nav, mobile menu, reveal-on-scroll, FAQ toggle — loaded on every page
   modal.js                     Shared modal engine (focus trap, ESC/click-outside close) — used by service
                                 modals and the exit-intent audit modal
   jarvis.js                    The Jarvis AI widget (canned responses today, one swap point for a real API)
   conversion.js                Sticky CTA, floating-button visibility, exit-intent/scroll-depth audit modal
   enquiry-form.js               Client-side validation + submission for enquiry.html
+  pricing-data.js                Single source of truth for Productised AI plans/policies — see PRICING_POLICY.md
+  pricing-render.js              Renders pricing cards/table/accordion/FAQ from pricing-data.js
   favicon.png                  Favicon (cropped from the client's logo)
   logo-icon.png                 Shield icon (client's logo, background removed) — used in nav/footer/loader/hero
   logo-full-lockup.png          Full shield+wordmark lockup — reference/print only, black text unreadable on dark UI
+  og-image.png                  Social-preview graphic (1200x630), built from logo-icon.png
   screenshots/                 Real product screenshots used in the 4 case studies
 vercel.json                    Security headers (CSP, HSTS, etc.) — see Security.md
 manifest.json, robots.txt, sitemap.xml   Standard PWA/SEO scaffolding
-docs/                          This documentation
+docs/                          This documentation, including sops/ (12 department SOPs) and templates/ (client-facing document templates)
 WEBSITE_AUDIT.md                Most recent full-site audit
 ```
 

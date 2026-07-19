@@ -20,6 +20,12 @@
 
 **Rate limiting:** `api/enquiry.js` limits to 5 submissions per 10 minutes per IP (`x-forwarded-for`), returning `429` on the 6th. Implemented as an in-memory `Map` — deliberately simple, with a documented limitation: it resets on every cold start and isn't shared across concurrent serverless instances, so it's "best effort," not a hard guarantee. If real abuse ever shows up, the upgrade path is an external store (Upstash Redis or Vercel KV).
 
+**Webhook signature verification (`api/stripe-webhook.js`):**
+- Every request is verified against `STRIPE_WEBHOOK_SECRET` using a hand-rolled HMAC-SHA256 check (`api/_lib/stripeSignature.js`) before any event data is trusted — without this, anyone who found the endpoint URL could POST a fake "payment succeeded" event and trigger the deployment/handover process described in [`PaymentSystem.md`](PaymentSystem.md).
+- Uses `crypto.timingSafeEqual()` for the signature comparison specifically to avoid a timing side-channel that could otherwise leak information about the correct signature byte-by-byte.
+- Includes a 300-second timestamp tolerance to reject replayed (captured-and-resent) requests, per Stripe's own recommended practice.
+- If `STRIPE_WEBHOOK_SECRET` isn't set, the endpoint refuses to process anything (`500`) rather than silently trusting unverified requests — fails closed, not open.
+
 ## What's explicitly NOT done (known gaps)
 
 - **No CSRF token** on the enquiry form. Low risk in practice (the endpoint only accepts a specific field shape and doesn't perform any state-changing action beyond sending email/rate-limit bookkeeping), but worth revisiting if the form's capability ever expands (e.g. to accept file uploads or trigger payments).

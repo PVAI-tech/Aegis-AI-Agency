@@ -24,7 +24,7 @@ This is a real operating reference, not aspirational org-chart theatre. As of th
 | Discovery calls | Calendly | Live |
 | Client messaging | WhatsApp (static contact link only) | Live |
 | Website AI widget | Jarvis (client-side canned responses, no backend) | Live, not connected to a real AI backend — see [`Agents.md`](Agents.md) |
-| Payments/subscriptions | Stripe | Account exists; not yet wired into the codebase — see [`PaymentSystem.md`](PaymentSystem.md) |
+| Payments/subscriptions | Stripe | Webhook code built (`api/stripe-webhook.js`); not yet registered with Stripe — see [`PaymentSystem.md`](PaymentSystem.md)'s remaining setup steps |
 | CRM | None | Not yet adopted — enquiries currently live only in email/inbox |
 | Usage metering (Productised AI) | None | Not yet built — see [`Database.md`](Database.md) and the `usage.provisional` flag in [`../assets/pricing-data.js`](../assets/pricing-data.js) |
 

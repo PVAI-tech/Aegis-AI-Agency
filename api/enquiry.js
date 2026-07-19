@@ -2,10 +2,12 @@
 // vercel.json needed. Receives the enquiry form POST from
 // assets/enquiry-form.js, validates it, and hands off to notifyChannels().
 //
-// Nothing here is wired to a real provider yet (no API keys, no .env) —
-// this is deliberately just the clean seam described in the project plan.
-// Each TODO below is an independent integration point; wiring one in later
-// shouldn't require touching the others.
+// Email notifications (RESEND_API_KEY) are live. The TODOs inside
+// notifyChannels() below are the integrations that aren't — each is an
+// independent seam; wiring one in later shouldn't require touching others.
+
+const { sendEmail } = require("./_lib/email");
+const { escapeHtml, sanitizeForSubject } = require("./_lib/text");
 
 const REQUIRED_FIELDS = [
   "fullName",
@@ -46,49 +48,7 @@ function validate(body) {
   return errors;
 }
 
-// Every enquiry field is attacker-controlled (it's a public form) and gets
-// interpolated into HTML email bodies below — escape it the same way a
-// templating engine would so a submission can't inject markup/scripts into
-// an email a real person opens.
-function escapeHtml(value) {
-  return String(value ?? "").replace(/[&<>"']/g, ch => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;"
-  }[ch]));
-}
-
-// Subject lines don't support HTML, but a newline in a user-controlled
-// field could otherwise be used to smuggle extra headers into the request
-// body Resend receives — strip control characters instead of escaping.
-function sanitizeForSubject(value) {
-  return String(value ?? "").replace(/[\r\n]+/g, " ").trim();
-}
-
 const INTERNAL_INBOX = "Aegishealthai@outlook.com";
-
-// Uses Resend's HTTP API directly via fetch rather than their SDK — this
-// project has no package.json/build step, so a plain fetch call avoids
-// adding a dependency Vercel would need to npm-install.
-async function sendEmail({ to, subject, html }) {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) throw new Error("RESEND_API_KEY is not set");
-  const from = process.env.RESEND_FROM || "Aegis AI <onboarding@resend.dev>";
-
-  const res = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ from, to, subject, html })
-  });
-  if (!res.ok) {
-    throw new Error(`Resend request failed (${res.status}): ${await res.text()}`);
-  }
-}
 
 function serviceList(enquiry) {
   const services = Array.isArray(enquiry.servicesInterested)
