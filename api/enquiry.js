@@ -48,7 +48,11 @@ function validate(body) {
   return errors;
 }
 
-const INTERNAL_INBOX = "Aegishealthai@outlook.com";
+// Must match the Resend account's registered email exactly (including case) —
+// while sandbox-sending from the shared onboarding@resend.dev address (no
+// verified custom domain yet), Resend only allows sending to that one exact
+// address, and its check is case-sensitive. See docs/Roadmap.md.
+const INTERNAL_INBOX = "aegishealthai@outlook.com";
 
 function serviceList(enquiry) {
   const services = Array.isArray(enquiry.servicesInterested)

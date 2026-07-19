@@ -22,7 +22,11 @@ const { sendEmail } = require("./_lib/email");
 const { escapeHtml, sanitizeForSubject } = require("./_lib/text");
 const { stripeGet } = require("./_lib/stripeApi");
 
-const INTERNAL_INBOX = "Aegishealthai@outlook.com";
+// Must match the Resend account's registered email exactly (including case) —
+// while sandbox-sending from the shared onboarding@resend.dev address (no
+// verified custom domain yet), Resend only allows sending to that one exact
+// address, and its check is case-sensitive. See docs/Roadmap.md.
+const INTERNAL_INBOX = "aegishealthai@outlook.com";
 
 async function resolveCustomerEmail(customerId) {
   if (!customerId) return null;
